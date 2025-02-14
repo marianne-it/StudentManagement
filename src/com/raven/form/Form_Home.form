@@ -266,7 +266,7 @@
                     <Column editable="false" title="Name" type="java.lang.Object"/>
                     <Column editable="false" title="Gender" type="java.lang.Object"/>
                     <Column editable="false" title="Course" type="java.lang.Object"/>
-                    <Column editable="false" title="Fees" type="java.lang.Object"/>
+                    <Column editable="false" title="Year" type="java.lang.Integer"/>
                     <Column editable="true" title="Action" type="java.lang.Object"/>
                   </Table>
                 </Property>

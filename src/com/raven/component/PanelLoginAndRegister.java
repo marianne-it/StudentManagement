@@ -84,7 +84,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         String password = String.valueOf(txtPass.getPassword());
 
         // Simulated authentication check
-        if (email.equals("admin") && password.equals("123")) {
+        if (email.equals("admin@nu-fairview.edu.ph") && password.equals("admin123")) {
             // Open the dashboard (create a new JFrame for the dashboard)
             Main_1 dashboard = new Main_1();
             dashboard.setVisible(true);

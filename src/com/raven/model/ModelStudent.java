@@ -40,12 +40,12 @@ public class ModelStudent {
         this.course = course;
     }
 
-    public double getFees() {
-        return fees;
+    public double getYear() {
+        return year;
     }
 
-    public void setFees(double fees) {
-        this.fees = fees;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public ModelStudent(Icon icon, String name, String gender, String course, double fees) {
@@ -53,7 +53,7 @@ public class ModelStudent {
         this.name = name;
         this.gender = gender;
         this.course = course;
-        this.fees = fees;
+        this.year = year;
     }
 
     public ModelStudent() {
@@ -63,10 +63,9 @@ public class ModelStudent {
     private String name;
     private String gender;
     private String course;
-    private double fees;
+    private int year;
 
     public Object[] toRowTable(EventAction event) {
-        DecimalFormat df = new DecimalFormat("$#,##0.00");
-        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
+        return new Object[]{new ModelProfile(icon, name), gender, course, year, new ModelAction(this, event)};
     }
 }

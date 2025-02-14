@@ -177,12 +177,19 @@ for (Object[] student : StudentsData.STUDENTS) {
 
             },
             new String [] {
-                "Name", "Gender", "Course", "Fees", "Action"
+                "Name", "Gender", "Course", "Year", "Action"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, true
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
