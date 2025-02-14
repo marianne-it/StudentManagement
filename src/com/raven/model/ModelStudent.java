@@ -40,7 +40,7 @@ public class ModelStudent {
         this.course = course;
     }
 
-    public double getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -48,7 +48,7 @@ public class ModelStudent {
         this.year = year;
     }
 
-    public ModelStudent(Icon icon, String name, String gender, String course, double fees) {
+    public ModelStudent(Icon icon, String name, String gender, String course, int year) {
         this.icon = icon;
         this.name = name;
         this.gender = gender;
