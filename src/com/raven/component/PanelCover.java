@@ -122,12 +122,12 @@ public class PanelCover extends javax.swing.JPanel {
     public void login(boolean login) {
         if (this.isLogin != login) {
             if (login) {
-                title.setText("hello, Friend!");
+                title.setText("NUFV STUDENT SYSTEM");
                 description.setText("Enter your personal details");
                 description1.setText("and start journey with us");
                 button.setText("SIGN UP");
             } else {
-                title.setText("Welcome Back!");
+                title.setText("Welcome, Nationalian!");
                 description.setText("To keep connected with us please");
                 description1.setText("login with your personal info");
                 button.setText("SIGN IN");

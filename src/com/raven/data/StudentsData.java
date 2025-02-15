@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  */
 public class StudentsData {
     public static final Object[][] STUDENTS = {
-        {new ImageIcon(StudentsData.class.getResource("/com/raven/icon/profile.jpg")), "Marianne", "Male", "BSIT", 1},
+        {new ImageIcon(StudentsData.class.getResource("/com/raven/icon/profile.jpg")), "Marianne", "Female", "BSIT", 1},
         {new ImageIcon(StudentsData.class.getResource("/com/raven/icon/profile1.jpg")), "Anne", "Female", "BSIT", 1},
         {new ImageIcon(StudentsData.class.getResource("/com/raven/icon/profile2.jpg")), "Kate", "Female", "BSIT", 2},
         {new ImageIcon(StudentsData.class.getResource("/com/raven/icon/profile2.jpg")), "Alex", "Male", "BSA", 3},

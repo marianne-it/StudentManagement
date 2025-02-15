@@ -7,6 +7,11 @@ import com.raven.event.EventShowPopupMenu;
 import com.raven.form.Form1;
 import com.raven.form.Form_Home;
 import com.raven.form.MainForm;
+import com.raven.form.Form_AcademicCalendar;
+import com.raven.form.Form_AllStudentInfo;
+import com.raven.form.Form_Flowchart;
+import com.raven.form.Form_ProgramsAndCourses;
+import com.raven.form.Form_UpdateStudentInfo;
 import com.raven.swing.MenuItem;
 import com.raven.swing.PopupMenu;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
@@ -32,25 +37,73 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
             init();
         }
 
-        private void init() {
-            layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
-            bg.setLayout(layout);
-            menu = new Menu();
-            header = new Header();
-            main = new MainForm();
-            menu.addEvent(new EventMenuSelected() {
-                @Override
-                public void menuSelected(int menuIndex, int subMenuIndex) {
-                    System.out.println("Menu Index : " + menuIndex + " SubMenu Index " + subMenuIndex);
-                    if (menuIndex == 0) {
-                        if (subMenuIndex == 0) {
+          private void init() {
+    layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
+    bg.setLayout(layout);
+    menu = new Menu();
+    header = new Header();
+    main = new MainForm();
+
+    menu.addEvent(new EventMenuSelected() {
+        @Override
+        public void menuSelected(int menuIndex, int subMenuIndex) {
+            System.out.println("Menu Index : " + menuIndex + " SubMenu Index : " + subMenuIndex);
+
+            // Handle menu selections
+            switch (menuIndex) {
+                case 0: // Dashboard
+                    switch (subMenuIndex) {
+                        case 0: // Home
                             main.showForm(new Form_Home());
-                        } else if (subMenuIndex == 1) {
+                            break;
+                        case 1: // Admissions
                             main.showForm(new Form1());
-                        }
+                            break;
+                        default:
+                            System.out.println("No action defined for subMenuIndex: " + subMenuIndex);
+                            break;
                     }
-                }
-            });
+                    break;
+
+                case 1: // Student Management
+                    switch (subMenuIndex) {
+                        case 0: // All Student Information
+                            main.showForm(new Form_AllStudentInfo());
+                            break;
+                        case 1: // Update Student Information
+                            main.showForm(new Form_UpdateStudentInfo());
+                            break;
+                        default:
+                            System.out.println("No action defined for subMenuIndex: " + subMenuIndex);
+                            break;
+                    }
+                    break;
+
+                case 2: // Curriculum Management
+                    switch (subMenuIndex) {
+                        case 0: // Flowchart
+                            main.showForm(new Form_Flowchart());
+                            break;
+                        case 1: // Academic Calendar
+                            main.showForm(new Form_AcademicCalendar());
+                            break;
+                        case 2: // Programs and Courses
+                            main.showForm(new Form_ProgramsAndCourses());
+                            break;
+                        default:
+                            System.out.println("No action defined for subMenuIndex: " + subMenuIndex);
+                            break;
+                    }
+                    break;
+
+                default:
+                    System.out.println("No action defined for Menu Index: " + menuIndex);
+                    break;
+            }
+        }
+    });
+
+            
             menu.addEventShowPopup(new EventShowPopupMenu() {
                 @Override
                 public void showPopup(Component com) {
