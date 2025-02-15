@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" pref="272" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane2" alignment="0" min="-2" pref="1056" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextField2" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField3" min="-2" pref="214" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField4" min="-2" pref="146" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField5" min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField6" min="-2" pref="83" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField7" min="-2" pref="81" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField8" min="-2" pref="80" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField9" min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField10" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField3" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="506" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="8f" green="70" red="31" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="List of Class Offerings"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f7" green="ed" red="d9" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f7" green="ed" red="d9" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace pref="295" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jTextField1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jComboBox3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Year:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="6">
+                <StringItem index="0" value="2019 - 2020"/>
+                <StringItem index="1" value="2020 - 2021"/>
+                <StringItem index="2" value="2021 - 2022"/>
+                <StringItem index="3" value="2022 - 2023"/>
+                <StringItem index="4" value="2023 - 2024"/>
+                <StringItem index="5" value="2024 - 2025"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Term:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox2">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="1st  Term "/>
+                <StringItem index="1" value="2nd Term "/>
+                <StringItem index="2" value="3rd  Term "/>
+                <StringItem index="3" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Program:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox3">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="13">
+                <StringItem index="0" value="---All---"/>
+                <StringItem index="1" value="BS Accountancy"/>
+                <StringItem index="2" value="BS Business Administration"/>
+                <StringItem index="3" value="BSBA Financial Management"/>
+                <StringItem index="4" value="BSBA Marketing Management"/>
+                <StringItem index="5" value="BS Architecture"/>
+                <StringItem index="6" value="BS Information Technology"/>
+                <StringItem index="7" value="BS Computer Science"/>
+                <StringItem index="8" value="BS Civil Engineering"/>
+                <StringItem index="9" value="BS Computer Engineering"/>
+                <StringItem index="10" value="BS Electrical Engineering"/>
+                <StringItem index="11" value="BS Hospitality Management"/>
+                <StringItem index="12" value="BS Tourism Management"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox3ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="7a" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x279c; Go"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Section"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Course Description"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Search Schedule"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Offered To"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Capacity"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Enrolled"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Reserved"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField9">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="Search Available"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Status"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="0"/>
+            </Property>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="9" rowCount="18">
+                <Column editable="true" title="Section" type="java.lang.Object">
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT231"/>
+                  <Data value="IT246"/>
+                  <Data value="IT247"/>
+                  <Data value="IT231"/>
+                  <Data value="IT232"/>
+                  <Data value="IT233"/>
+                  <Data value="IT234"/>
+                  <Data value="IT235"/>
+                  <Data value="IT236"/>
+                </Column>
+                <Column editable="true" title="Course Description" type="java.lang.Object">
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="COMPAIS: COMPUTERIZED ANALYTICS INFO SYSTEMS (QUAMET 2)"/>
+                  <Data value="CONWORL: The Contemporary World"/>
+                  <Data value="CONWORL: The Contemporary World"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                  <Data value="DATAMA2: DATABASE MANAGEMENT 2 and ADMINISTRATION"/>
+                </Column>
+                <Column editable="true" title="Schedule" type="java.lang.Object">
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="TUE&#x9;03:00PM - 05:00PM&#x9;418L FRI&#x9;03:00PM - 05:00PM&#x9;425 "/>
+                  <Data value="MON&#x9;07:00AM - 09:00AM&#x9;VR87 THU&#x9;07:00AM - 09:00AM&#x9;VR87 "/>
+                  <Data value="MON&#x9;05:00PM - 07:00PM&#x9;VR88 THU&#x9;05:00PM - 07:00PM&#x9;VR88"/>
+                  <Data value="MON&#x9;07:00AM - 09:00AM&#x9;418L THU&#x9;07:00AM - 09:00AM&#x9;415"/>
+                  <Data value="MON&#x9;09:00AM - 11:00AM&#x9;418L THU&#x9;09:00AM - 11:00AM&#x9;415"/>
+                  <Data value="TUE&#x9;07:00AM - 09:00AM&#x9;418L FRI&#x9;07:00AM - 09:00AM&#x9;415"/>
+                  <Data value="TUE&#x9;07:00AM - 09:00AM&#x9;415 FRI&#x9;07:00AM - 09:00AM&#x9;418L"/>
+                  <Data value="MON&#x9;01:00PM - 03:00PM&#x9;418L THU&#x9;01:00PM - 03:00PM&#x9;415"/>
+                  <Data value="MON&#x9;03:00PM - 05:00PM&#x9;418L THU&#x9;03:00PM - 05:00PM&#x9;415 "/>
+                </Column>
+                <Column editable="true" title="Offered To" type="java.lang.Object">
+                  <Data value="None"/>
+                  <Data value="Within Department"/>
+                  <Data value="None"/>
+                  <Data value="Within Department"/>
+                  <Data value="Within Department"/>
+                  <Data value="None"/>
+                  <Data value="Within Department"/>
+                  <Data value="None"/>
+                  <Data value="Within Department"/>
+                  <Data value="NoneNone"/>
+                  <Data value="None"/>
+                  <Data value="Within Department"/>
+                  <Data value="None"/>
+                  <Data value="None"/>
+                  <Data value="None"/>
+                  <Data value="None"/>
+                  <Data value="None"/>
+                  <Data value="None"/>
+                </Column>
+                <Column editable="true" title="Capacity" type="java.lang.Object">
+                  <Data value="41"/>
+                  <Data value="23"/>
+                  <Data value="21"/>
+                  <Data value="42"/>
+                  <Data value="32"/>
+                  <Data value="33"/>
+                  <Data value="35"/>
+                  <Data value="40"/>
+                  <Data value="25"/>
+                  <Data value="21"/>
+                  <Data value="40"/>
+                  <Data value="40"/>
+                  <Data value="40"/>
+                  <Data value="40"/>
+                  <Data value="40"/>
+                  <Data value="40"/>
+                  <Data value="41"/>
+                  <Data value="41"/>
+                </Column>
+                <Column editable="true" title="Enrolled" type="java.lang.Object">
+                  <Data value="21"/>
+                  <Data value="10"/>
+                  <Data value="11"/>
+                  <Data value="25"/>
+                  <Data value="31"/>
+                  <Data value="25"/>
+                  <Data value="5"/>
+                  <Data value="26"/>
+                  <Data value="14"/>
+                  <Data value="14"/>
+                  <Data value="38"/>
+                  <Data value="36"/>
+                  <Data value="39"/>
+                  <Data value="37"/>
+                  <Data value="37"/>
+                  <Data value="39"/>
+                  <Data value="41"/>
+                  <Data value="38"/>
+                </Column>
+                <Column editable="true" title="Reserved" type="java.lang.Object">
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                  <Data value="0"/>
+                </Column>
+                <Column editable="true" title="Available" type="java.lang.Object">
+                  <Data value="20"/>
+                  <Data value="13"/>
+                  <Data value="10"/>
+                  <Data value="17"/>
+                  <Data value="1"/>
+                  <Data value="8"/>
+                  <Data value="30"/>
+                  <Data value="14"/>
+                  <Data value="11"/>
+                  <Data value="7"/>
+                  <Data value="2"/>
+                  <Data value="4"/>
+                  <Data value="1"/>
+                  <Data value="3"/>
+                  <Data value="3"/>
+                  <Data value="1"/>
+                  <Data value="-"/>
+                  <Data value="3"/>
+                </Column>
+                <Column editable="true" title="Status" type="java.lang.Object">
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x2705; Available"/>
+                  <Data value="&#x274c; Closed"/>
+                  <Data value="&#x2705; Available"/>
+                </Column>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="75" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="rowHeight" type="int" value="50"/>
+            <Property name="showGrid" type="boolean" value="true"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="17" green="d1" red="fb" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>

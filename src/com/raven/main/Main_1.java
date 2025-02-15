@@ -10,7 +10,7 @@ import com.raven.form.MainForm;
 import com.raven.form.Form_AcademicCalendar;
 import com.raven.form.Form_AllStudentInfo;
 import com.raven.form.Form_Flowchart;
-import com.raven.form.Form_ProgramsAndCourses;
+import com.raven.form.Form_ProgramAndCourses;
 import com.raven.form.Form_UpdateStudentInfo;
 import com.raven.swing.MenuItem;
 import com.raven.swing.PopupMenu;
@@ -88,7 +88,7 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
                             main.showForm(new Form_AcademicCalendar());
                             break;
                         case 2: // Programs and Courses
-                            main.showForm(new Form_ProgramsAndCourses());
+                            main.showForm(new Form_ProgramAndCourses());
                             break;
                         default:
                             System.out.println("No action defined for subMenuIndex: " + subMenuIndex);
