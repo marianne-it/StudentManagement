@@ -4,7 +4,7 @@ import com.raven.component.Header;
 import com.raven.component.Menu;
 import com.raven.event.EventMenuSelected;
 import com.raven.event.EventShowPopupMenu;
-import com.raven.form.Form1;
+import com.raven.form.Form_Registration;
 import com.raven.form.Form_Home;
 import com.raven.form.MainForm;
 import com.raven.form.Form_AcademicCalendar;
@@ -57,7 +57,7 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
                             main.showForm(new Form_Home());
                             break;
                         case 1: // Admissions
-                            main.showForm(new Form1());
+                            main.showForm(new Form_Registration());
                             break;
                         default:
                             System.out.println("No action defined for subMenuIndex: " + subMenuIndex);
@@ -103,7 +103,6 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
         }
     });
 
-            
             menu.addEventShowPopup(new EventShowPopupMenu() {
                 @Override
                 public void showPopup(Component com) {

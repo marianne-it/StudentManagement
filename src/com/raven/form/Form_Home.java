@@ -106,6 +106,8 @@ for (Object[] student : StudentsData.STUDENTS) {
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new com.raven.swing.table.Table();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         card1.setBackground(new java.awt.Color(50, 65, 140));
         card1.setColorGradient(new java.awt.Color(50, 65, 140));
 

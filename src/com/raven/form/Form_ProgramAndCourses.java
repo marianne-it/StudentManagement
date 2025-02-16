@@ -49,6 +49,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(49, 112, 143));
