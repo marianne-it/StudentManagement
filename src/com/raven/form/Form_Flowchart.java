@@ -26,19 +26,173 @@ public class Form_Flowchart extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        studentFlowchart = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        yearDropdown = new javax.swing.JComboBox<>();
+        courseDropdown1 = new javax.swing.JComboBox<>();
+        confirmButton = new javax.swing.JButton();
+
+        jPanel2.setBackground(new java.awt.Color(251, 209, 23));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
+        );
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/calendar-day.png"))); // NOI18N
+        jLabel5.setText(" Student Flowchart");
+
+        studentFlowchart.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        studentFlowchart.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"          1", "SCITECS", "CONWORLD", "ARTAPRE", "USERDES", "WEBPROG", "GETHICS", "PHILHIS", "RIZLIFE", "EXCOMP2", "PROFETH", "INTERN1", "INTERN2"},
+                {"          2", "UNDSELF", "PURPCOM", "DASTRUC", "DISCRET", "MOBPROG", "EXCOMP1", "MSYADD1", "MCSPROJ", "PROJMAN", "SOFTDEV", null, null},
+                {"          3", "INTCOMC", "INPROLA", "BUSPROS", "DATAMA1", "DATAMA2", "MNTSDEV", "ELECTV3", "TENTREP", "MNSYIT", "QUALITY", null, null},
+                {"          4", "PROGCON", "MANPRIN", "MATWORL", "QUAMET1", "PEMBEDS", "ELECTV2", "ICTSRV1", "ELECETV4", "ITBLAWS", "ELECLAN", null, null},
+                {"          5", "COMPORG", "OPESYST", "DNETCOM", "INFOSEC", "ELECT1", "PEDUFOR", null, null, null, null, null, null},
+                {"          6", "NATSER1", "NATSER2", "PEDUONE", "PEDUTWO", "CLDCOMP", null, null, null, null, null, null, null},
+                {"          7", null, null, null, "RPASYST", "PEDUTRI", null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "#", "Term 1", "Term 2", "Term 3", "Term 4", "Term 5", "Term 6", "Term 7", "Term 8", "Term 9", "Term 10", "Term 11", "Term 12"
+            }
+        ));
+        studentFlowchart.setRowHeight(70);
+        studentFlowchart.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        studentFlowchart.setShowGrid(true);
+        studentFlowchart.setUpdateSelectionOnSort(false);
+        studentFlowchart.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(studentFlowchart);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setText("Course:");
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setText("Year Level:");
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setText("AY 2024 - 2025 3rd Term");
+
+        yearDropdown.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        yearDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st year", "2nd Year", "3rd Year", "4th Year"}));
+        yearDropdown.setSelectedItem(1);
+        yearDropdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yearDropdownActionPerformed(evt);
+            }
+        });
+
+        courseDropdown1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        courseDropdown1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BS Psychology", "BS Business Administration major in Marketing Management", "BS Tourism Management", "BS Computer Engineering", "BS Information Technology with Specialization in Mobile and Internet Technologies", "BS Architecture", "BS Civil Engineering", "BS Tourism Management", "AB Communication", "BS Hospitality Management", "BS Business Administration major in Financial Management" }));
+        courseDropdown1.setSelectedIndex(-1);
+        courseDropdown1.setSelectedItem(1);
+        courseDropdown1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseDropdown1ActionPerformed(evt);
+            }
+        });
+
+        confirmButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        confirmButton.setText("Confirm");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1067, 1067, 1067)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(confirmButton)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(32, 32, 32)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(courseDropdown1, 0, 421, Short.MAX_VALUE)
+                                .addComponent(yearDropdown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(courseDropdown1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(yearDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(confirmButton)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(12, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void yearDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearDropdownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearDropdownActionPerformed
+
+    private void courseDropdown1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseDropdown1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseDropdown1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JComboBox<String> courseDropdown1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable studentFlowchart;
+    private javax.swing.JComboBox<String> yearDropdown;
     // End of variables declaration//GEN-END:variables
 }
