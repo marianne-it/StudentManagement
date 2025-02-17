@@ -54,7 +54,7 @@ public class Menu extends javax.swing.JPanel {
     }
 
     public void initMenuItem() {
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard", "Home", "Add Student"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard", "Home", "Registration"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Student Management", "All Student Information", "Update Student Information"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Curriculum Management", "Flowchart", "Academic Calendar", "Programs and Courses"));
     }
