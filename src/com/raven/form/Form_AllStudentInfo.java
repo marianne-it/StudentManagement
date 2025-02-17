@@ -1,52 +1,5 @@
 package com.raven.form;
 
-import com.raven.data.StudentsData;
-
-public class Form_AllStudentInfo extends javax.swing.JPanel {
-    
-    private final StudentsData StudentsData;
-
-    // Constructor accepting StudentsData
-    public Form_AllStudentInfo(StudentsData studentData) {
-        initComponents();
-        this.StudentsData = studentData;
-        
-        // Display the student data
-        displayStudentData();
-    }
-
-    private void displayStudentData() {
-        // Assuming you have labels or text fields in your Form_AllStudentInfo JPanel to display the data
-        firstNameLabel.setText(StudentsData.getfirstName());
-        middleNameLabel.setText(StudentsData.getmiddleName());
-        lastNameLabel.setText(StudentsData.getlastName());
-        mobileNumberLabel.setText(StudentsData.getmobileNumber());
-        emailLabel.setText(StudentsData.getemail());
-        dateOfBirthLabel.setText(StudentsData.getdateOfBirth());
-        placeOfBirthLabel.setText(StudentsData.getplaceOfBirth());
-        studentNumberLabel.setText(StudentsData.getstudentNumber());
-        programLabel.setText(StudentsData.getprogram());
-        academicYearLabel.setText(StudentsData.getacademicYear());
-        entryLevelLabel.setText(StudentsData.getentryLevel());
-    }
-    
-    // Initialize your labels or other components here
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel middleNameLabel;
-    private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JLabel mobileNumberLabel;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JLabel dateOfBirthLabel;
-    private javax.swing.JLabel placeOfBirthLabel;
-    private javax.swing.JLabel studentNumberLabel;
-    private javax.swing.JLabel programLabel;
-    private javax.swing.JLabel academicYearLabel;
-    private javax.swing.JLabel entryLevelLabel;
-
-    private void initComponents() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

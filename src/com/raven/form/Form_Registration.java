@@ -22,7 +22,7 @@ public class Form_Registration extends javax.swing.JPanel { // Example class nam
     // Other components and methods...
 
     // Collect student data method
-    private StudentsData collectStudentsData() {
+    private StudentsData StudentsData() {
         String firstNameText = firstName.getText();
         String middleNameText = middleName.getText();
         String lastNameText = lastName.getText();
@@ -39,9 +39,9 @@ public class Form_Registration extends javax.swing.JPanel { // Example class nam
         String entryLevelText = (String) entryLevel.getSelectedItem();
 
         // Create a StudentsData object and return it
-        return new StudentsData(firstNameText, middleNameText, lastNameText, mobileNumberText, emailText, 
-                                dateOfBirth, placeOfBirthText, studentNumberText, programText, 
-                                academicYearText, entryLevelText);
+        return new StudentsData(firstName, middleName, lastName, mobileNumber, email, 
+                                dateOfBirth, placeOfBirth studentNumber, program, 
+                                academicYear, entryLevel);
     }
 }
 

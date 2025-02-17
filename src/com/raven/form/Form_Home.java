@@ -12,9 +12,6 @@ import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import com.raven.data.StudentsData;
-
-
 public class Form_Home extends javax.swing.JPanel {
 
     public Form_Home() {
@@ -50,15 +47,19 @@ public class Form_Home extends javax.swing.JPanel {
                 }
             }
         };
-for (Object[] student : StudentsData.STUDENTS) {
-    table1.addRow(new ModelStudent(
-        (ImageIcon) student[0], 
-        (String) student[1], 
-        (String) student[2], 
-        (String) student[3], 
-        (int) student[4]
-    ).toRowTable(eventAction));
-}
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg")), "John", "Male", "BSIT", 500).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile1.jpg")), "Anne", "Female", "BSIT", 200).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Kate", "Male", "BSIT", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Alex", "Male", "BSA", 0).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Alexa", "Female", "BSBA-FM", 0).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Moree", "Female", "BSBA-MM", 0).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Ana", "Female", "BSCE", 400).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Marie", "Female", "BSHM", 200).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Ann", "Female", "BSTM", 600).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Kate", "Female", "BSIT", 200).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Sky", "Male", "BSCPE", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Luke", "Male", "BSA", 100).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Shaun", "Male", "BSIT", 0).toRowTable(eventAction));
     }
 
     private void initCardData() {
@@ -74,7 +75,7 @@ for (Object[] student : StudentsData.STUDENTS) {
 
     private void initNoticeBoard() {
         noticeBoard.addDate("02/14/2025");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "Now", "Online Teacher's Evaluation (OTE) is now open."));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "Now", "This is just a demo project."));
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "2h ago", "Enrollment for the third semester of Academic Year 2025 is still ongoing."));
         noticeBoard.addDate("01/10/2025");
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "7:15 AM", "Students are required to wear complete uniform inside the campus."));
@@ -106,8 +107,6 @@ for (Object[] student : StudentsData.STUDENTS) {
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new com.raven.swing.table.Table();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-
         card1.setBackground(new java.awt.Color(50, 65, 140));
         card1.setColorGradient(new java.awt.Color(50, 65, 140));
 
@@ -133,6 +132,7 @@ for (Object[] student : StudentsData.STUDENTS) {
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 105, 105));
+        jLabel3.setText("Simple Miglayout API Doc");
         jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         jLabel4.setOpaque(true);
@@ -162,8 +162,8 @@ for (Object[] student : StudentsData.STUDENTS) {
                 .addComponent(jLabel3)
                 .addGap(9, 9, 9)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noticeBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(noticeBoard, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -178,19 +178,12 @@ for (Object[] student : StudentsData.STUDENTS) {
 
             },
             new String [] {
-                "Name", "Gender", "Course", "Year", "Action"
+                "Name", "Gender", "Course", "Fees", "Action"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, true
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
