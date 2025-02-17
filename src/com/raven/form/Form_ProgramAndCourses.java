@@ -82,7 +82,7 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(51, 122, 183));
+        jTextField1.setBackground(new java.awt.Color(50, 65, 140));
         jTextField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("➜ Go");
@@ -129,6 +129,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
         jTextField6.setText("Search Capacity");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +138,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(204, 204, 204));
         jTextField7.setText("Search Enrolled");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +147,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(204, 204, 204));
         jTextField8.setText("Search Reserved");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +157,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
         });
 
         jTextField9.setEditable(false);
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(204, 204, 204));
         jTextField9.setText("Search Available");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +166,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(204, 204, 204));
         jTextField10.setText("Search Status");
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +229,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             .addGap(0, 55, Short.MAX_VALUE)
         );
 
+        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(204, 204, 204));
         jTextField12.setText("Search Course Description");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +238,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField13.setForeground(new java.awt.Color(204, 204, 204));
         jTextField13.setText("Search Section");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +247,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField14.setForeground(new java.awt.Color(204, 204, 204));
         jTextField14.setText("Search Schedule");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,6 +256,8 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
             }
         });
 
+        jTextField15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField15.setForeground(new java.awt.Color(204, 204, 204));
         jTextField15.setText("Search Offered To");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,18 +310,19 @@ public class Form_ProgramAndCourses extends javax.swing.JPanel {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

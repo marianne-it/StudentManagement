@@ -38,6 +38,8 @@ public class Form_Flowchart extends javax.swing.JPanel {
         courseDropdown1 = new javax.swing.JComboBox<>();
         confirmButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jPanel2.setBackground(new java.awt.Color(251, 209, 23));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
