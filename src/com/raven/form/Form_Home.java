@@ -61,7 +61,7 @@ public class Form_Home extends javax.swing.JPanel {
 
     private void initNoticeBoard() {
         noticeBoard.addDate("02/14/2025");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "Now", "This is just a demo project."));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "Now", "The exams for the 2nd term finals will start on February 24, 2025."));
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "2h ago", "Enrollment for the third semester of Academic Year 2025 is still ongoing."));
         noticeBoard.addDate("01/10/2025");
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Announcement", "7:15 AM", "Students are required to wear complete uniform inside the campus."));
@@ -118,7 +118,7 @@ public class Form_Home extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 105, 105));
-        jLabel3.setText("Simple Miglayout API Doc");
+        jLabel3.setText("Updates & Announcements");
         jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         jLabel4.setOpaque(true);
@@ -136,7 +136,7 @@ public class Form_Home extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(0, 257, Short.MAX_VALUE)))
+                        .addGap(0, 256, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(

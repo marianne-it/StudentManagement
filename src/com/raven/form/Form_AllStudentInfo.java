@@ -67,7 +67,7 @@ public class Form_AllStudentInfo extends javax.swing.JPanel {
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/users-class.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/check-mark.png"))); // NOI18N
         jLabel5.setText("Student Information");
 
         jLabel32.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
