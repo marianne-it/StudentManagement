@@ -1,70 +1,121 @@
 package com.raven.model;
 
-import com.raven.swing.table.EventAction;
-import com.raven.swing.table.ModelAction;
-import com.raven.swing.table.ModelProfile;
-import javax.swing.Icon;
-
 public class ModelStudent {
+    private String studentNo;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String mobileNumber;
+    private String email;
+    private String dateOfBirth;
+    private String placeOfBirth;
+    private String program;
+    private String academicYear;
+    private String entryLevel; // This field represents the "year level"
 
-    public Icon getIcon() {
-        return icon;
+    // Constructor with all fields
+    public ModelStudent(String studentNo, String firstName, String middleName, String lastName, 
+                        String mobileNumber, String email, String dateOfBirth, 
+                        String placeOfBirth, String program, String academicYear, String entryLevel) {
+        this.studentNo = studentNo;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.placeOfBirth = placeOfBirth;
+        this.program = program;
+        this.academicYear = academicYear;
+        this.entryLevel = entryLevel;
     }
 
-    public void setIcon(Icon icon) {
-        this.icon = icon;
+    // Getters and Setters
+    public String getStudentNo() {
+        return studentNo;
     }
 
-    public String getName() {
-        return name;
+    public void setStudentNo(String studentNo) {
+        this.studentNo = studentNo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getGender() {
-        return gender;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public String getCourse() {
-        return course;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public String getLastName() {
+        return lastName;
     }
 
-    public int getYear() {
-        return year;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
-    public ModelStudent(Icon icon, String name, String gender, String course, int year) {
-        this.icon = icon;
-        this.name = name;
-        this.gender = gender;
-        this.course = course;
-        this.year = year;
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
-    public ModelStudent() {
+    public String getEmail() {
+        return email;
     }
 
-    private Icon icon;
-    private String name;
-    private String gender;
-    private String course;
-    private int year;
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public Object[] toRowTable(EventAction event) {
-        return new Object[]{new ModelProfile(icon, name), gender, course, year, new ModelAction(this, event)};
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    public String getAcademicYear() {
+        return academicYear;
+    }
+
+    public void setAcademicYear(String academicYear) {
+        this.academicYear = academicYear;
+    }
+
+    public String getEntryLevel() {
+        return entryLevel;
+    }
+
+    public void setEntryLevel(String entryLevel) {
+        this.entryLevel = entryLevel;
     }
 }

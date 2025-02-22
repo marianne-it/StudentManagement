@@ -24,11 +24,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="cmdMenu" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace pref="390" max="32767" attributes="0"/>
-              <Component id="buttonBadges2" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="buttonBadges1" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <EmptySpace pref="480" max="32767" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="8" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -54,12 +50,8 @@
                   </Group>
                   <Component id="jSeparator1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="buttonBadges1" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="buttonBadges2" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="cmdMenu" min="-2" pref="40" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="cmdMenu" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -107,40 +99,6 @@
           <Image iconType="3" name="/com/raven/icon/menu.png"/>
         </Property>
       </Properties>
-    </Component>
-    <Component class="com.raven.swing.ButtonBadges" name="buttonBadges2">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8c" green="41" red="32" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e8" green="b2" red="3f" type="rgb"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/raven/icon/message.png"/>
-        </Property>
-        <Property name="badges" type="int" value="5"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBadges2ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="com.raven.swing.ButtonBadges" name="buttonBadges1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8c" green="41" red="32" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="31" green="31" red="fa" type="rgb"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/raven/icon/notification.png"/>
-        </Property>
-        <Property name="badges" type="int" value="12"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBadges1ActionPerformed"/>
-      </Events>
     </Component>
     <Container class="com.raven.swing.ImageAvatar" name="pic">
       <Properties>

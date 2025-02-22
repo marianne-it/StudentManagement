@@ -20,8 +20,6 @@ public class Header extends javax.swing.JPanel {
         lbRole = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         cmdMenu = new com.raven.swing.Button();
-        buttonBadges2 = new com.raven.swing.ButtonBadges();
-        buttonBadges1 = new com.raven.swing.ButtonBadges();
         pic = new com.raven.swing.ImageAvatar();
 
         setBackground(new java.awt.Color(50, 65, 140));
@@ -39,26 +37,6 @@ public class Header extends javax.swing.JPanel {
         cmdMenu.setBackground(new java.awt.Color(50, 65, 140));
         cmdMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/menu.png"))); // NOI18N
 
-        buttonBadges2.setBackground(new java.awt.Color(50, 65, 140));
-        buttonBadges2.setForeground(new java.awt.Color(63, 178, 232));
-        buttonBadges2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/message.png"))); // NOI18N
-        buttonBadges2.setBadges(5);
-        buttonBadges2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges2ActionPerformed(evt);
-            }
-        });
-
-        buttonBadges1.setBackground(new java.awt.Color(50, 65, 140));
-        buttonBadges1.setForeground(new java.awt.Color(250, 49, 49));
-        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/notification.png"))); // NOI18N
-        buttonBadges1.setBadges(12);
-        buttonBadges1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges1ActionPerformed(evt);
-            }
-        });
-
         pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -68,11 +46,7 @@ public class Header extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
-                .addComponent(buttonBadges2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonBadges1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 480, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,32 +68,19 @@ public class Header extends javax.swing.JPanel {
                         .addContainerGap(24, Short.MAX_VALUE))
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonBadges1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonBadges2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 24, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pic, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBadges1ActionPerformed
-
-    private void buttonBadges2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBadges2ActionPerformed
-
     private void cmdMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmdMenuActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.swing.ButtonBadges buttonBadges1;
-    private com.raven.swing.ButtonBadges buttonBadges2;
     private com.raven.swing.Button cmdMenu;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lbRole;

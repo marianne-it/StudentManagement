@@ -45,8 +45,8 @@ public class Card extends javax.swing.JPanel {
         lbTitle = new javax.swing.JLabel();
         lbValues = new javax.swing.JLabel();
         lbIcon = new javax.swing.JLabel();
-        lbPer = new javax.swing.JLabel();
         pro = new com.raven.swing.ProgressBarCustom();
+        lbPer = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(50, 65, 140));
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -72,7 +72,7 @@ public class Card extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pro, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbPer))
                     .addGroup(layout.createSequentialGroup()
@@ -80,7 +80,7 @@ public class Card extends javax.swing.JPanel {
                             .addComponent(lbTitle)
                             .addComponent(lbValues))
                         .addGap(18, 18, 18)
-                        .addComponent(lbIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))
+                        .addComponent(lbIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,14 +92,12 @@ public class Card extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbValues))
                     .addComponent(lbIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(pro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                    .addComponent(lbPer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbPer, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(pro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
     }// </editor-fold>//GEN-END:initComponents
 

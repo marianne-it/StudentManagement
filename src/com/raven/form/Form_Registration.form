@@ -31,26 +31,26 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="567" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="contactNumber" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="email" alignment="0" min="-2" pref="307" max="-2" attributes="0"/>
+                                  <Component id="TXT_mobileNo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TXT_email" alignment="0" min="-2" pref="307" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="287" max="-2" attributes="0"/>
+                              <Component id="TXT_lastName" min="-2" pref="287" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Component id="jSeparator1" alignment="0" min="-2" pref="942" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jTextField1" min="-2" pref="287" max="-2" attributes="0"/>
+                          <Component id="TXT_studentNo" min="-2" pref="287" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                          <Component id="Program" min="-2" pref="307" max="-2" attributes="0"/>
+                          <Component id="CB_program" min="-2" pref="307" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jSeparator4" alignment="1" min="-2" pref="942" max="-2" attributes="0"/>
-                      <Component id="entryLevel" alignment="1" min="-2" pref="307" max="-2" attributes="0"/>
-                      <Component id="Submit" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="CB_entryLevel" alignment="1" min="-2" pref="307" max="-2" attributes="0"/>
+                      <Component id="submitButton" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="date" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                                              <Component id="CB_date" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -78,17 +78,17 @@
                                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
-                                              <Component id="Month" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="CB_month" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Year" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="CB_year" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="firstName" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                                      <Component id="TXT_firstName" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jTextField3" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                                  <Component id="TXT_middleName" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -96,7 +96,7 @@
                                   <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jTextField2" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                          <Component id="TXT_placeofBirth" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -105,7 +105,7 @@
                           <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="academicYear" min="-2" pref="287" max="-2" attributes="0"/>
+                      <Component id="CB_academicYear" min="-2" pref="287" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -132,23 +132,23 @@
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="contactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TXT_mobileNo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="firstName" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="TXT_firstName" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXT_email" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXT_middleName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXT_lastName" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -157,36 +157,36 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="date" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Month" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Year" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_month" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_year" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXT_placeofBirth" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jSeparator4" min="-2" pref="11" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" pref="37" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Program" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_program" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TXT_studentNo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="academicYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_academicYear" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="entryLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_entryLevel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="Submit" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -244,7 +244,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="Year">
+    <Component class="javax.swing.JComboBox" name="CB_year">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
@@ -279,7 +279,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YearActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_yearActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -301,12 +301,12 @@
         <Property name="text" type="java.lang.String" value="Mobile No:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="contactNumber">
+    <Component class="javax.swing.JTextField" name="TXT_mobileNo">
       <Properties>
         <Property name="text" type="java.lang.String" value="(09) "/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactNumberActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_mobileNoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
@@ -317,9 +317,9 @@
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="email">
+    <Component class="javax.swing.JTextField" name="TXT_email">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_emailActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel32">
@@ -372,7 +372,7 @@
         <Property name="text" type="java.lang.String" value="Student Personal Information"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="academicYear">
+    <Component class="javax.swing.JComboBox" name="CB_academicYear">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -386,7 +386,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="academicYearActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_academicYearActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -408,7 +408,7 @@
         <Property name="text" type="java.lang.String" value="First Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Program">
+    <Component class="javax.swing.JComboBox" name="CB_program">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
@@ -433,7 +433,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProgramActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_programActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -455,12 +455,12 @@
         <Property name="text" type="java.lang.String" value="Entry Level:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="firstName">
+    <Component class="javax.swing.JTextField" name="TXT_firstName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_firstNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="entryLevel">
+    <Component class="javax.swing.JComboBox" name="CB_entryLevel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
@@ -478,7 +478,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entryLevelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_entryLevelActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -492,15 +492,21 @@
         <Property name="text" type="java.lang.String" value="Last Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Submit">
+    <Component class="javax.swing.JButton" name="submitButton">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="8c" green="41" red="32" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubmitActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -511,9 +517,9 @@
         <Property name="text" type="java.lang.String" value="Date of Birth:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="TXT_studentNo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_studentNoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -524,9 +530,9 @@
         <Property name="text" type="java.lang.String" value="Date:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="TXT_placeofBirth">
     </Component>
-    <Component class="javax.swing.JComboBox" name="date">
+    <Component class="javax.swing.JComboBox" name="CB_date">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
@@ -571,13 +577,16 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_dateActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="TXT_middleName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_middleNameActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
       <Properties>
@@ -587,7 +596,10 @@
         <Property name="text" type="java.lang.String" value="Month:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="TXT_lastName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT_lastNameActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
@@ -597,7 +609,7 @@
         <Property name="text" type="java.lang.String" value="Year:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Month">
+    <Component class="javax.swing.JComboBox" name="CB_month">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="0"/>
@@ -623,7 +635,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MonthActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_monthActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

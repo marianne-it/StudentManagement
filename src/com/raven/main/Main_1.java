@@ -8,7 +8,7 @@ import com.raven.form.Form_Registration;
 import com.raven.form.Form_Home;
 import com.raven.form.MainForm;
 import com.raven.form.Form_AcademicCalendar;
-import com.raven.form.Form_AllStudentInfo;
+import com.raven.form.Form_AllStudentInformation;
 import com.raven.form.Form_Flowchart;
 import com.raven.form.Form_ProgramAndCourses;
 import com.raven.form.Form_UpdateStudentInfo;
@@ -68,7 +68,7 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
                 case 1: // Student Management
                     switch (subMenuIndex) {
                         case 0: // All Student Information
-                            main.showForm(new Form_AllStudentInfo());
+                            main.showForm(new Form_AllStudentInformation());
                             break;
                         case 1: // Update Student Information
                             main.showForm(new Form_UpdateStudentInfo());

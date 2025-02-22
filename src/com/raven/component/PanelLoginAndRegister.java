@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import com.raven.main.Main_1;
 import com.raven.swing.Button;
 import com.raven.swing.MyPasswordField;
 import com.raven.swing.MyTextField;
@@ -10,8 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
-import com.raven.main.Main_1;
-
 
 public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
 
