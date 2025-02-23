@@ -4,6 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.raven.model.ModelStudent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DataOperations {
 
@@ -34,6 +37,42 @@ public class DataOperations {
         } catch (SQLException e) {
             System.err.println("Error fetching student data: " + e.getMessage());
         }
+        return students;
+    }
+    
+        // Fetch the 30 most recent students
+    public List<ModelStudent> getRecentStudents() {
+        List<ModelStudent> students = new ArrayList<>();
+        String sql = "SELECT * FROM students ORDER BY StudentNo LIMIT 30";
+
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
+             Statement statement = connection.createStatement();
+             ResultSet rs = statement.executeQuery(sql)) {
+
+            while (rs.next()) {
+                // Fetch all fields as Strings
+                String studentNo = rs.getString("StudentNo"); // Student number is now VARCHAR
+                String firstName = rs.getString("firstName");
+                String middleName = rs.getString("middleName");
+                String lastName = rs.getString("lastName");
+                String mobileNumber = rs.getString("mobileNo");
+                String email = rs.getString("email");
+                String dateOfBirth = rs.getString("dob");
+                String placeOfBirth = rs.getString("placeOfBirth");
+                String program = rs.getString("program");
+                String academicYear = rs.getString("academicYear");
+                String entryLevel = rs.getString("entryLevel");
+
+                // Add to the list
+                students.add(new ModelStudent(
+                    studentNo, firstName, middleName, lastName, mobileNumber,
+                    email, dateOfBirth, placeOfBirth, program, academicYear, entryLevel
+                ));
+            }
+        } catch (Exception e) {
+            System.err.println("Error fetching recent students: " + e.getMessage());
+        }
+
         return students;
     }
 

@@ -6,6 +6,7 @@ import com.raven.model.ModelStudent;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import com.raven.data.DataOperations;
+import com.raven.swing.table.Table;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.Icon;
@@ -24,35 +25,38 @@ public class Form_Home extends javax.swing.JPanel {
         initCardData();
         initTableData();
     }
-
+    
+    // Load student data into the table
     private void initTableData() {
         DataOperations dataOperations = new DataOperations();
-        List<ModelStudent> students = dataOperations.getAllStudents();
+        List<ModelStudent> students = dataOperations.getRecentStudents(); // Fetch recent 30 students
         if (students == null || students.isEmpty()) {
             System.err.println("No students found!");
             return;
         }
         DefaultTableModel tableModel = (DefaultTableModel) StudentTable.getModel();
-        tableModel.setRowCount(0);
+        tableModel.setRowCount(0); // Clear existing rows
+
+        // Iterate through the students and populate the table
         for (ModelStudent student : students) {
-            // Combine firstName, middleName, and lastName into a single string
+            // Combine first name, middle name, and last name into Full Name
             String fullName = student.getFirstName();
             if (student.getMiddleName() != null && !student.getMiddleName().isEmpty()) {
-                fullName += " " + student.getMiddleName();
+                fullName += " " + student.getMiddleName(); // Append middle name if not empty
             }
-            fullName += " " + student.getLastName();
+            fullName += " " + student.getLastName(); // Always append last name
 
+            // Add the relevant fields to the table
             tableModel.addRow(new Object[]{
-                student.getStudentNo(),
-                fullName, // Use full name here
-                student.getProgram(),
-                student.getEntryLevel(),
-                student.getEmail(),
-                "Update",
-                "Delete"
+                student.getStudentNo(), // Student No
+                fullName,               // Full Name (combined)
+                student.getProgram(),   // Program
+                student.getEntryLevel(),// Year Level
+                student.getEmail()      // Email
             });
         }
     }
+
 
     private void initCardData() {
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
@@ -64,7 +68,7 @@ public class Form_Home extends javax.swing.JPanel {
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card4.setData(new ModelCard("Staff", 550, 95, icon4));
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -104,14 +108,43 @@ public class Form_Home extends javax.swing.JPanel {
 
         StudentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
                 "Student No.", "Name", "Program", "Year Level", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -120,11 +153,7 @@ public class Form_Home extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(StudentTable);
         if (StudentTable.getColumnModel().getColumnCount() > 0) {
-            StudentTable.getColumnModel().getColumn(0).setPreferredWidth(150);
-            StudentTable.getColumnModel().getColumn(1).setPreferredWidth(150);
-            StudentTable.getColumnModel().getColumn(2).setPreferredWidth(150);
             StudentTable.getColumnModel().getColumn(3).setPreferredWidth(50);
-            StudentTable.getColumnModel().getColumn(4).setPreferredWidth(150);
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -168,9 +197,7 @@ public class Form_Home extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(0, 0, 0)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

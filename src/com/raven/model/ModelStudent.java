@@ -13,10 +13,12 @@ public class ModelStudent {
     private String academicYear;
     private String entryLevel; // This field represents the "year level"
 
+    // No-argument constructor
+    public ModelStudent() {
+    }
+    
     // Constructor with all fields
-    public ModelStudent(String studentNo, String firstName, String middleName, String lastName, 
-                        String mobileNumber, String email, String dateOfBirth, 
-                        String placeOfBirth, String program, String academicYear, String entryLevel) {
+    public ModelStudent(String studentNo, String firstName, String middleName, String lastName, String mobileNumber, String email, String dateOfBirth, String placeOfBirth, String program, String academicYear, String entryLevel) {
         this.studentNo = studentNo;
         this.firstName = firstName;
         this.middleName = middleName;
