@@ -81,7 +81,7 @@ public class DataOperations {
     // Add a new student
     public void addStudent(ModelStudent student) {
         String sql = "INSERT INTO students (student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                     "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                     "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

@@ -481,78 +481,79 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
     }//GEN-LAST:event_TXT_middleNameActionPerformed
 
     private void GoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoButtonActionPerformed
-        // Get the student number from the text field
-        String studentNumber = enterStudentNumber.getText().trim();
+    // Get the student number from the text field
+    String studentNumber = enterStudentNumber.getText().trim();
 
-        // Validate input
-        if (studentNumber.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter a student number!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    // Validate input
+    if (studentNumber.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter a student number!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        // Database variables
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+    // Database variables
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
 
-        try {
-            // Establish the connection
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
+    try {
+        // Establish the connection
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
 
-            // Prepare the SQL query to fetch the student's information
-            String sql = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, academicYear, entryLevel, program, scholarType "
+        // Prepare the SQL query to fetch the student's information
+        String sql = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, academicYear, entryLevel, program, scholarType "
             + "FROM students WHERE studentNo = ?";
-            pstmt = conn.prepareStatement(sql);
 
-            // Set the student number in the query
-            pstmt.setString(1, studentNumber);
+        pstmt = conn.prepareStatement(sql);
 
-            // Execute the query
-            rs = pstmt.executeQuery();
+        // Set the student number in the query
+        pstmt.setString(1, studentNumber);
 
-            // Check if a record is found
-            if (rs.next()) {
-                // Populate text fields with the retrieved data
-                TXT_firstName.setText(rs.getString("firstName"));
-                TXT_middleName.setText(rs.getString("middleName"));
-                TXT_lastName.setText(rs.getString("lastName"));
-                TXT_mobileNo.setText(rs.getString("mobileNo"));
-                TXT_email.setText(rs.getString("email"));
-                TXT_placeofBirth.setText(rs.getString("placeOfBirth"));
-                TXT_studentNo.setText(rs.getString("StudentNo"));
+        // Execute the query
+        rs = pstmt.executeQuery();
 
-                // Populate combo boxes with the retrieved data
-                CB_entryLevel.setSelectedItem(rs.getString("entryLevel")); // Ensure this matches the combo box options
-                CB_program.setSelectedItem(rs.getString("program"));       // Ensure the combo box contains the program options
-                CB_scholarType.setSelectedItem(rs.getString("scholarType"));
+        // Check if a record is found
+        if (rs.next()) {
+            // Populate text fields with the retrieved data
+            TXT_firstName.setText(rs.getString("firstName"));
+            TXT_middleName.setText(rs.getString("middleName"));
+            TXT_lastName.setText(rs.getString("lastName"));
+            TXT_mobileNo.setText(rs.getString("mobileNo"));
+            TXT_email.setText(rs.getString("email"));
+            TXT_placeofBirth.setText(rs.getString("placeOfBirth"));
+            TXT_studentNo.setText(rs.getString("StudentNo"));
 
-                // Parse and set the date in the combo boxes (dob: yyyy-mm-dd)
-                String[] dobParts = rs.getString("dob").split("-");
-                if (dobParts.length == 3) {
-                    CB_year.setSelectedItem(dobParts[0]);  // Year
-                    CB_month.setSelectedItem(dobParts[1]); // Month
-                    CB_date.setSelectedItem(dobParts[2]);  // Date
-                }
+            // Populate combo boxes with the retrieved data
+            CB_entryLevel.setSelectedItem(rs.getString("entryLevel")); // Ensure this matches the combo box options
+            CB_program.setSelectedItem(rs.getString("program"));       // Ensure the combo box contains the program options
+            CB_scholarType.setSelectedItem(rs.getString("scholarType"));
 
-                CB_academicYear.setSelectedItem(rs.getString("academicYear")); // Set the academic year
-            } else {
-                // No record found
-                JOptionPane.showMessageDialog(this, "No student found with number: " + studentNumber, "Error", JOptionPane.ERROR_MESSAGE);
+            // Parse and set the date in the combo boxes (dob: day-month-year)
+            String[] dobParts = rs.getString("dob").split("-"); // Split by "-"
+            if (dobParts.length == 3) {
+                CB_date.setSelectedItem(dobParts[0]);  // Day
+                CB_month.setSelectedItem(dobParts[1]); // Month
+                CB_year.setSelectedItem(dobParts[2]);  // Year
             }
-        } catch (SQLException e) {
-            // Handle database errors
-            JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
-        } finally {
-            // Close resources
-            try {
-                if (rs != null) rs.close();
-                if (pstmt != null) pstmt.close();
-                if (conn != null) conn.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
+
+            CB_academicYear.setSelectedItem(rs.getString("academicYear")); // Set the academic year
+        } else {
+            // No record found
+            JOptionPane.showMessageDialog(this, "No student found with number: " + studentNumber, "Error", JOptionPane.ERROR_MESSAGE);
         }
+    } catch (SQLException e) {
+        // Handle database errors
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+        e.printStackTrace();
+    } finally {
+        // Close resources
+        try {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
     }//GEN-LAST:event_GoButtonActionPerformed
 
     private void TXT_lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_lastNameActionPerformed

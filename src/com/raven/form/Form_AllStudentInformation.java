@@ -428,13 +428,12 @@ public Form_AllStudentInformation() {
             CB_program.setSelectedItem(rs.getString("program"));       // Ensure the combo box contains the program options
             CB_scholarType.setSelectedItem(rs.getString("scholarType"));
 
-            // Parse and set the date in the combo boxes (dob: yyyy-mm-dd)
             String[] dobParts = rs.getString("dob").split("-");
             if (dobParts.length == 3) {
-                CB_year.setSelectedItem(dobParts[0]);  // Year
+                CB_date.setSelectedItem(dobParts[0]);
                 CB_month.setSelectedItem(dobParts[1]); // Month
-                CB_date.setSelectedItem(dobParts[2]);  // Date
-            }
+                CB_year.setSelectedItem(dobParts[2]);
+                }
 
             CB_academicYear.setSelectedItem(rs.getString("academicYear")); // Set the academic year
         } else {

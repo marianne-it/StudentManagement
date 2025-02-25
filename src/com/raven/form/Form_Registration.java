@@ -451,7 +451,7 @@ public Form_Registration() {
          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
 
          // Prepare the SQL statement
-         String sql = "INSERT INTO students (firstName, middleName, lastName, placeOfBirth, studentNo, mobileNo, email, entryLevel, program, dob, academicYear, scholarType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+         String sql = "INSERT INTO students (firstName, middleName, lastName, placeOfBirth, studentNo, mobileNo, email, entryLevel, program, dob, academicYear, scholarType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
          pstmt = conn.prepareStatement(sql);
 
          // Set the values
