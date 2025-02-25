@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 
 public class Form_Registration extends JPanel {
-    
+ 
 public Form_Registration() {
         initComponents();
     }
@@ -448,6 +448,7 @@ public Form_Registration() {
          // Execute the statement
          int rowsInserted = pstmt.executeUpdate();
          if (rowsInserted > 0) {
+            
              JOptionPane.showMessageDialog(this, "Record successfully inserted!");
          }
      } catch (SQLException e) {
@@ -522,4 +523,5 @@ public Form_Registration() {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
+
 }

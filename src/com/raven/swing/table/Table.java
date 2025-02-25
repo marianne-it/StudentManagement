@@ -19,49 +19,36 @@ public class Table extends JTable {
         setGridColor(new Color(230, 230, 230));
         setRowHeight(40);
         getTableHeader().setReorderingAllowed(false);
+
+        // Set header alignment to LEFT for all columns
         getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
             @Override
-            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
-                TableHeader header = new TableHeader(o + "");
-                if (i1 == 4) {
-                    header.setHorizontalAlignment(JLabel.CENTER);
-                }
+            public Component getTableCellRendererComponent(JTable jtable, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                TableHeader header = new TableHeader(value.toString());
+                header.setHorizontalAlignment(JLabel.LEFT); // Align header text to LEFT
                 return header;
             }
         });
+
+        // Set cell content alignment to LEFT for all columns
         setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
-            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean selected, boolean focus, int i, int i1) {
-                if (o instanceof ModelProfile) {
-                    ModelProfile data = (ModelProfile) o;
-                    Profile cell = new Profile(data);
-                    if (selected) {
-                        cell.setBackground(new Color(239, 244, 255));
-                    } else {
-                        cell.setBackground(Color.WHITE);
-                    }
-                    return cell;
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-                } else if (o instanceof ModelAction) {
-                    ModelAction data = (ModelAction) o;
-                    Action cell = new Action(data);
-                    if (selected) {
-                        cell.setBackground(new Color(239, 244, 255));
-                    } else {
-                        cell.setBackground(Color.WHITE);
-                    }
-                    return cell;
+                // Set cell padding
+                cell.setBorder(new EmptyBorder(10, 15, 10, 15)); // Top, Left, Bottom, Right padding
+                cell.setForeground(new Color(102, 102, 102));
+                cell.setHorizontalAlignment(JLabel.LEFT); // Align all cell content to LEFT
+
+                // Background color for selection
+                if (isSelected) {
+                    cell.setBackground(new Color(239, 244, 255));
                 } else {
-                    Component com = super.getTableCellRendererComponent(jtable, o, selected, focus, i, i1);
-                    setBorder(noFocusBorder);
-                    com.setForeground(new Color(102, 102, 102));
-                    if (selected) {
-                        com.setBackground(new Color(239, 244, 255));
-                    } else {
-                        com.setBackground(Color.WHITE);
-                    }
-                    return com;
+                    cell.setBackground(Color.WHITE);
                 }
+
+                return cell;
             }
         });
     }
