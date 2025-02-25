@@ -29,12 +29,28 @@ public class Form_Home extends javax.swing.JPanel {
     private void initTableData() {
         DataOperations dataOperations = new DataOperations();
         List<ModelStudent> students = dataOperations.getRecentStudents(); // Fetch recent 30 students
+
         if (students == null || students.isEmpty()) {
             System.err.println("No students found!");
             return;
         }
+
         DefaultTableModel tableModel = (DefaultTableModel) StudentTable.getModel();
         tableModel.setRowCount(0); // Clear existing rows
+
+        // Debug: Print fetched student data
+        System.out.println("Fetched students:");
+        for (ModelStudent student : students) {
+            System.out.println(
+                "StudentNo: " + student.getStudentNo() + ", " +
+                "FirstName: " + student.getFirstName() + ", " +
+                "MiddleName: " + student.getMiddleName() + ", " +
+                "LastName: " + student.getLastName() + ", " +
+                "Program: " + student.getProgram() + ", " +
+                "EntryLevel: " + student.getEntryLevel() + ", " +
+                "Email: " + student.getEmail()
+            );
+        }
 
         // Iterate through the students and populate the table
         for (ModelStudent student : students) {
@@ -43,19 +59,25 @@ public class Form_Home extends javax.swing.JPanel {
             if (student.getMiddleName() != null && !student.getMiddleName().isEmpty()) {
                 fullName += " " + student.getMiddleName(); // Append middle name if not empty
             }
-            fullName += " " + student.getLastName(); // Always append last name
+            if (student.getLastName() != null && !student.getLastName().isEmpty()) {
+                fullName += " " + student.getLastName(); // Always append last name
+            }
+
+            // Handle null values for other fields
+            String program = student.getProgram() != null ? student.getProgram() : "N/A";
+            String entryLevel = student.getEntryLevel() != null ? student.getEntryLevel() : "N/A";
+            String email = student.getEmail() != null ? student.getEmail() : "N/A";
 
             // Add the relevant fields to the table
             tableModel.addRow(new Object[]{
-                student.getStudentNo(), // Student No
-                fullName,               // Full Name (combined)
-                student.getProgram(),   // Program
-                student.getEntryLevel(),// Year Level
-                student.getEmail()      // Email
+                student.getStudentNo() != null ? student.getStudentNo() : "N/A", // Student No
+                fullName.trim(),                 // Full Name (combined and trimmed)
+                program,                         // Program
+                entryLevel,                      // Year Level
+                email                            // Email
             });
         }
     }
-
 
     private void initCardData() {
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
@@ -65,7 +87,7 @@ public class Form_Home extends javax.swing.JPanel {
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card3.setData(new ModelCard("New Students", 3000, 80, icon3));
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card4.setData(new ModelCard("Dropped", 550, 95, icon4));
+        card4.setData(new ModelCard("Scholars", 550, 95, icon4));
     }
  
     @SuppressWarnings("unchecked")

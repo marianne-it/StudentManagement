@@ -12,13 +12,14 @@ public class ModelStudent {
     private String program;
     private String academicYear;
     private String entryLevel; // This field represents the "year level"
+    private String scholarType;
 
     // No-argument constructor
-    public ModelStudent() {
+    public ModelStudent(String string, String string1, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12) {
     }
     
     // Constructor with all fields
-    public ModelStudent(String studentNo, String firstName, String middleName, String lastName, String mobileNumber, String email, String dateOfBirth, String placeOfBirth, String program, String academicYear, String entryLevel) {
+    public ModelStudent(String studentNo, String firstName, String middleName, String lastName, String mobileNumber, String email, String dateOfBirth, String placeOfBirth, String program, String academicYear, String entryLevel, String scholarType) {
         this.studentNo = studentNo;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -30,6 +31,7 @@ public class ModelStudent {
         this.program = program;
         this.academicYear = academicYear;
         this.entryLevel = entryLevel;
+        this.scholarType = scholarType;
     }
 
     // Getters and Setters
@@ -119,5 +121,12 @@ public class ModelStudent {
 
     public void setEntryLevel(String entryLevel) {
         this.entryLevel = entryLevel;
+    }
+    
+    public String getScholarType() {
+            return entryLevel;
+        }
+    public void setScholarType(String scholarType) {
+        this.scholarType = scholarType;
     }
 }

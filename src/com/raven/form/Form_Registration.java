@@ -53,6 +53,8 @@ public Form_Registration() {
         TXT_lastName = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         CB_month = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        CB_scholarType = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -119,6 +121,7 @@ public Form_Registration() {
         jLabel32.setText("Student No.:");
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(50, 65, 140));
         jLabel21.setText("Course Registration");
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -130,6 +133,7 @@ public Form_Registration() {
         jLabel1.setText(" Add Student");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(50, 65, 140));
         jLabel9.setText("Student Personal Information");
 
         CB_academicYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024 - 2025", "2025 - 2026", "2026 - 2027" }));
@@ -237,6 +241,18 @@ public Form_Registration() {
             }
         });
 
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel17.setText("Scholarship:");
+
+        CB_scholarType.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        CB_scholarType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- none -", "Dona Miguela M. Jhocson – Blue Scholar", "Dona Pacita J. Ocampo – White Scholar", "Nationalian Scholarship Program (NSP)", "Mariano Jhocson Science Scholarship Program", "NU Nazareth School and Other NU SHS Graduate Discount", "Employees of SM and its Affiliates", "DOST Scholarship", "CHED Scholarship", "SM Foundation Scholarship" }));
+        CB_scholarType.setSelectedItem(1);
+        CB_scholarType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_scholarTypeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -247,15 +263,14 @@ public Form_Registration() {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
+                        .addGap(69, 69, 69)
+                        .addComponent(TXT_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(567, 567, 567)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(TXT_mobileNo)
-                                    .addComponent(TXT_email, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(TXT_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CB_scholarType, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TXT_mobileNo)
+                                .addComponent(TXT_email, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
@@ -298,7 +313,8 @@ public Form_Registration() {
                                 .addGap(92, 92, 92)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
-                                    .addComponent(jLabel12)))
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel17)))
                             .addComponent(TXT_placeofBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +326,7 @@ public Form_Registration() {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,22 +339,27 @@ public Form_Registration() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel12)
-                        .addComponent(TXT_mobileNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(TXT_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(TXT_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(TXT_middleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(TXT_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel12)
+                                .addComponent(TXT_mobileNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TXT_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(TXT_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(TXT_middleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8)
+                                .addComponent(TXT_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CB_scholarType, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -419,6 +440,7 @@ public Form_Registration() {
      String program = (String) CB_program.getSelectedItem();
      String dob = CB_date.getSelectedItem() + "-" + CB_month.getSelectedItem() + "-" + CB_year.getSelectedItem();
      String academicYear = (String) CB_academicYear.getSelectedItem();
+     String scholarType = (String) CB_scholarType.getSelectedItem();
 
      // Database connection and insertion
      Connection conn = null;
@@ -429,7 +451,7 @@ public Form_Registration() {
          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
 
          // Prepare the SQL statement
-         String sql = "INSERT INTO students (firstName, middleName, lastName, placeOfBirth, studentNo, mobileNo, email, entryLevel, program, dob, academicYear) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+         String sql = "INSERT INTO students (firstName, middleName, lastName, placeOfBirth, studentNo, mobileNo, email, entryLevel, program, dob, academicYear, scholarType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
          pstmt = conn.prepareStatement(sql);
 
          // Set the values
@@ -444,6 +466,7 @@ public Form_Registration() {
          pstmt.setString(9, program);
          pstmt.setString(10, dob);
          pstmt.setString(11, academicYear);
+         pstmt.setString(12, scholarType);
 
          // Execute the statement
          int rowsInserted = pstmt.executeUpdate();
@@ -485,6 +508,10 @@ public Form_Registration() {
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_lastNameActionPerformed
 
+    private void CB_scholarTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_scholarTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_scholarTypeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_academicYear;
@@ -492,6 +519,7 @@ public Form_Registration() {
     private javax.swing.JComboBox<String> CB_entryLevel;
     private javax.swing.JComboBox<String> CB_month;
     private javax.swing.JComboBox<String> CB_program;
+    private javax.swing.JComboBox<String> CB_scholarType;
     private javax.swing.JComboBox<String> CB_year;
     private javax.swing.JTextField TXT_email;
     private javax.swing.JTextField TXT_firstName;
@@ -508,6 +536,7 @@ public Form_Registration() {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;

@@ -15,7 +15,7 @@ public class DataOperations {
         List<ModelStudent> students = new ArrayList<>();
         try (Connection connection = DatabaseConnection.getConnection()) {
             String query = "SELECT student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                           "date_of_birth, place_of_birth, program, academic_year, entry_level FROM students";
+                           "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type FROM students";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
@@ -31,7 +31,8 @@ public class DataOperations {
                     resultSet.getString("place_of_birth"),
                     resultSet.getString("program"),
                     resultSet.getString("academic_year"),
-                    resultSet.getString("entry_level")
+                    resultSet.getString("entry_level"),
+                    resultSet.getString("scholar_type")
                 ));
             }
         } catch (SQLException e) {
@@ -62,11 +63,12 @@ public class DataOperations {
                 String program = rs.getString("program");
                 String academicYear = rs.getString("academicYear");
                 String entryLevel = rs.getString("entryLevel");
+                String scholarType = rs.getString("scholarType");
 
                 // Add to the list
                 students.add(new ModelStudent(
                     studentNo, firstName, middleName, lastName, mobileNumber,
-                    email, dateOfBirth, placeOfBirth, program, academicYear, entryLevel
+                    email, dateOfBirth, placeOfBirth, program, academicYear, entryLevel, scholarType
                 ));
             }
         } catch (Exception e) {
@@ -79,7 +81,7 @@ public class DataOperations {
     // Add a new student
     public void addStudent(ModelStudent student) {
         String sql = "INSERT INTO students (student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                     "date_of_birth, place_of_birth, program, academic_year, entry_level) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                     "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -95,6 +97,7 @@ public class DataOperations {
             pstmt.setString(9, student.getProgram());
             pstmt.setString(10, student.getAcademicYear());
             pstmt.setString(11, student.getEntryLevel());
+            pstmt.setString(12, student.getScholarType());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -119,7 +122,7 @@ public class DataOperations {
     // Update student details
     public void updateStudent(ModelStudent student) {
         String sql = "UPDATE students SET first_name = ?, middle_name = ?, last_name = ?, mobile_number = ?, email = ?, " +
-                     "date_of_birth = ?, place_of_birth = ?, program = ?, academic_year = ?, entry_level = ? WHERE student_no = ?";
+                     "date_of_birth = ?, place_of_birth = ?, program = ?, academic_year = ?, entry_level = ?, scholar_type = ?, WHERE student_no = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -135,6 +138,7 @@ public class DataOperations {
             pstmt.setString(9, student.getAcademicYear());
             pstmt.setString(10, student.getEntryLevel());
             pstmt.setString(11, student.getStudentNo());
+            pstmt.setString(12, student.getScholarType());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -146,7 +150,7 @@ public class DataOperations {
     public ModelStudent getStudentByNumber(String studentNumber) {
         ModelStudent student = null;
         String query = "SELECT student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                       "date_of_birth, place_of_birth, program, academic_year, entry_level " +
+                       "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type " +
                        "FROM students WHERE student_no = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -164,7 +168,8 @@ public class DataOperations {
                     resultSet.getString("place_of_birth"),
                     resultSet.getString("program"),
                     resultSet.getString("academic_year"),
-                    resultSet.getString("entry_level")
+                    resultSet.getString("entry_level"),
+                    resultSet.getString("scholar_type")
                 );
             }
         } catch (SQLException e) {

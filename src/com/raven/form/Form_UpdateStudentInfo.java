@@ -57,6 +57,8 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
         SaveButton = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
         TXT_studentNo = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        CB_scholarType = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -281,6 +283,18 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
             }
         });
 
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setText("Scholarship:");
+
+        CB_scholarType.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        CB_scholarType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- none -", "Dona Miguela M. Jhocson – Blue Scholar", "Dona Pacita J. Ocampo – White Scholar", "Nationalian Scholarship Program (NSP)", "Mariano Jhocson Science Scholarship Program", "NU Nazareth School and Other NU SHS Graduate Discount", "Employees of SM and its Affiliates", "DOST Scholarship", "CHED Scholarship", "SM Foundation Scholarship" }));
+        CB_scholarType.setSelectedItem(1);
+        CB_scholarType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_scholarTypeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -355,20 +369,24 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(CB_program, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel25)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(CB_entryLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel24)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(CB_academicYear, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel17)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel33)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(TXT_studentNo, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                                .addComponent(TXT_studentNo, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel17)
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel25)
+                                                    .addComponent(jLabel18))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(CB_scholarType, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(CB_entryLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jLabel9)))
@@ -389,7 +407,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -419,13 +437,15 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                     .addComponent(jLabel14)
                     .addComponent(jLabel15)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CB_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CB_month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CB_year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(CB_scholarType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(TXT_placeofBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -443,8 +463,8 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ResetButton)
                     .addComponent(SaveButton)
-                    .addComponent(DeleteButton))
-                .addContainerGap(109, Short.MAX_VALUE))
+                    .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -480,7 +500,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
 
             // Prepare the SQL query to fetch the student's information
-            String sql = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, academicYear, entryLevel, program "
+            String sql = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, academicYear, entryLevel, program, scholarType "
             + "FROM students WHERE studentNo = ?";
             pstmt = conn.prepareStatement(sql);
 
@@ -504,6 +524,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                 // Populate combo boxes with the retrieved data
                 CB_entryLevel.setSelectedItem(rs.getString("entryLevel")); // Ensure this matches the combo box options
                 CB_program.setSelectedItem(rs.getString("program"));       // Ensure the combo box contains the program options
+                CB_scholarType.setSelectedItem(rs.getString("scholarType"));
 
                 // Parse and set the date in the combo boxes (dob: yyyy-mm-dd)
                 String[] dobParts = rs.getString("dob").split("-");
@@ -586,7 +607,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
 
         // Prepare the SQL query for updating student information
-        String sql = "UPDATE students SET firstName = ?, middleName = ?, lastName = ?, mobileNo = ?, email = ?, dob = ?, placeOfBirth = ?, academicYear = ?, entryLevel = ?, program = ? WHERE StudentNo = ?";
+        String sql = "UPDATE students SET firstName = ?, middleName = ?, lastName = ?, mobileNo = ?, email = ?, dob = ?, placeOfBirth = ?, academicYear = ?, entryLevel = ?, program = ?, scholarType = ? WHERE StudentNo = ?";
         pstmt = conn.prepareStatement(sql);
 
         // Set parameters
@@ -600,7 +621,8 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
         pstmt.setString(8, CB_academicYear.getSelectedItem().toString());
         pstmt.setString(9, CB_entryLevel.getSelectedItem().toString());
         pstmt.setString(10, CB_program.getSelectedItem().toString());
-        pstmt.setString(11, TXT_studentNo.getText().trim());
+        pstmt.setString(11, CB_scholarType.getSelectedItem().toString());
+        pstmt.setString(12, TXT_studentNo.getText().trim());
 
         // Execute the update
         int rowsAffected = pstmt.executeUpdate();
@@ -696,9 +718,14 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
     CB_academicYear.setSelectedIndex(0);
     CB_entryLevel.setSelectedIndex(0);
     CB_program.setSelectedIndex(0);
+    CB_scholarType.setSelectedIndex(0);
 
     JOptionPane.showMessageDialog(this, "Fields have been reset!", "Reset", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_ResetButtonActionPerformed
+
+    private void CB_scholarTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_scholarTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_scholarTypeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_academicYear;
@@ -706,6 +733,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> CB_entryLevel;
     private javax.swing.JComboBox<String> CB_month;
     private javax.swing.JComboBox<String> CB_program;
+    private javax.swing.JComboBox<String> CB_scholarType;
     private javax.swing.JComboBox<String> CB_year;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton GoButton;
@@ -727,6 +755,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
