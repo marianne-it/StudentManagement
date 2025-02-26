@@ -174,7 +174,7 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
         });
 
         CB_year.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        CB_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2014", "2014", "2015" }));
+        CB_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015" }));
         CB_year.setSelectedItem(1);
         CB_year.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,9 +460,10 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ResetButton)
-                    .addComponent(SaveButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ResetButton)
+                        .addComponent(SaveButton))
                     .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
@@ -594,56 +595,60 @@ public class Form_UpdateStudentInfo extends javax.swing.JPanel {
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
     // Validate input fields
-    if (TXT_studentNo.getText().trim().isEmpty() || TXT_firstName.getText().trim().isEmpty() || TXT_lastName.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill out all required fields!", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    // Database variables
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-
-    try {
-        // Establish the connection
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
-
-        // Prepare the SQL query for updating student information
-        String sql = "UPDATE students SET firstName = ?, middleName = ?, lastName = ?, mobileNo = ?, email = ?, dob = ?, placeOfBirth = ?, academicYear = ?, entryLevel = ?, program = ?, scholarType = ? WHERE StudentNo = ?";
-        pstmt = conn.prepareStatement(sql);
-
-        // Set parameters
-        pstmt.setString(1, TXT_firstName.getText().trim());
-        pstmt.setString(2, TXT_middleName.getText().trim());
-        pstmt.setString(3, TXT_lastName.getText().trim());
-        pstmt.setString(4, TXT_mobileNo.getText().trim());
-        pstmt.setString(5, TXT_email.getText().trim());
-        pstmt.setString(6, CB_year.getSelectedItem() + "-" + CB_month.getSelectedItem() + "-" + CB_date.getSelectedItem());
-        pstmt.setString(7, TXT_placeofBirth.getText().trim());
-        pstmt.setString(8, CB_academicYear.getSelectedItem().toString());
-        pstmt.setString(9, CB_entryLevel.getSelectedItem().toString());
-        pstmt.setString(10, CB_program.getSelectedItem().toString());
-        pstmt.setString(11, CB_scholarType.getSelectedItem().toString());
-        pstmt.setString(12, TXT_studentNo.getText().trim());
-
-        // Execute the update
-        int rowsAffected = pstmt.executeUpdate();
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(this, "Student information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "No changes made. Please verify the student information.", "Info", JOptionPane.WARNING_MESSAGE);
+        if (TXT_studentNo.getText().trim().isEmpty() || TXT_firstName.getText().trim().isEmpty() || TXT_lastName.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill out all required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        e.printStackTrace();
-    } finally {
-        // Close resources
+
+        // Database variables
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
         try {
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+            // Establish the connection
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
+
+            // Prepare the SQL query for updating the student record
+            String sql = "UPDATE students SET StudentNo = ?, firstName = ?, middleName = ?, lastName = ?, mobileNo = ?, email = ?, dob = ?, placeOfBirth = ?, academicYear = ?, entryLevel = ?, program = ?, scholarType = ? WHERE StudentNo = ?";
+            pstmt = conn.prepareStatement(sql);
+
+            // Set parameters
+            pstmt.setString(1, TXT_studentNo.getText().trim()); // New StudentNo
+            pstmt.setString(2, TXT_firstName.getText().trim());
+            pstmt.setString(3, TXT_middleName.getText().trim());
+            pstmt.setString(4, TXT_lastName.getText().trim());
+            pstmt.setString(5, TXT_mobileNo.getText().trim());
+            pstmt.setString(6, TXT_email.getText().trim());
+            pstmt.setString(7, CB_date.getSelectedItem() + "-" + CB_month.getSelectedItem() + "-" + CB_year.getSelectedItem());
+            pstmt.setString(8, TXT_placeofBirth.getText().trim());
+            pstmt.setString(9, CB_academicYear.getSelectedItem().toString());
+            pstmt.setString(10, CB_entryLevel.getSelectedItem().toString());
+            pstmt.setString(11, CB_program.getSelectedItem().toString());
+            pstmt.setString(12, CB_scholarType.getSelectedItem().toString());
+            pstmt.setString(13, enterStudentNumber.getText().trim()); // Original StudentNo for the WHERE clause
+
+            // Execute the update
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Student information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                // Update the system to reflect the new StudentNo
+                enterStudentNumber.setText(TXT_studentNo.getText().trim());
+            } else {
+                JOptionPane.showMessageDialog(this, "No changes made. Please verify the student information.", "Info", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } finally {
+            // Close resources
+            try {
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
-    }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void TXT_studentNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_studentNoActionPerformed

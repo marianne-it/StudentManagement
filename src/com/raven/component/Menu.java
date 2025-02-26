@@ -3,17 +3,24 @@ package com.raven.component;
 import com.raven.event.EventMenu;
 import com.raven.event.EventMenuSelected;
 import com.raven.event.EventShowPopupMenu;
+import com.raven.main.Main; // Import your Main class for the login page
 import com.raven.model.ModelMenu;
 import com.raven.swing.MenuAnimation;
 import com.raven.swing.MenuItem;
 import com.raven.swing.scrollbar.ScrollBarCustom;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import net.miginfocom.swing.MigLayout;
 
 public class Menu extends javax.swing.JPanel {
@@ -51,12 +58,49 @@ public class Menu extends javax.swing.JPanel {
         sp.setVerticalScrollBar(new ScrollBarCustom());
         layout = new MigLayout("wrap, fillx, insets 0", "[fill]", "[]0[]");
         panel.setLayout(layout);
+
+        // Initialize the "Log Out" button
+        JButton btnLogOut = new JButton("Log Out");
+        btnLogOut.setBackground(new Color(255, 255, 255));
+        btnLogOut.setForeground(new Color(50, 65, 140));
+        btnLogOut.setFont(new Font("Arial", Font.BOLD, 14));
+        btnLogOut.setFocusPainted(false);
+        btnLogOut.setBorderPainted(false);
+        btnLogOut.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        // Add an action listener to handle the log out action
+        btnLogOut.addActionListener(e -> {
+            // Get the current top-level frame (parent window)
+            JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+
+            // Show a confirmation dialog centered on the top frame
+            int response = JOptionPane.showConfirmDialog(
+                topFrame,
+                "Are you sure you want to log out?",
+                "Confirm Log Out",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+            );
+
+        // If the user confirms, redirect to the login screen
+        if (response == JOptionPane.YES_OPTION) {
+            // Redirect to the login screen
+            Main loginPage = new Main(); // Replace with your login page class
+            loginPage.setVisible(true);
+
+            // Close the current window
+            topFrame.dispose();
+        }
+    });
+
+        // Add the button to the panel
+        panel.add(btnLogOut, "gap top 50, h 40!, dock south");
     }
 
     public void initMenuItem() {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard", "Home", "Add Student"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Student Management", "All Student Information", "Update Student Information"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Curriculum Management", "Flowchart", "Academic Calendar", "Programs and Courses"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/6.png")), "Student Management", "All Student Information", "Update Student Information"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/7.png")), "Curriculum Management", "Flowchart", "Academic Calendar", "Programs and Courses"));
     }
 
     private void addMenu(ModelMenu menu) {

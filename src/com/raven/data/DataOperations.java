@@ -4,9 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.raven.model.ModelStudent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DataOperations {
 
@@ -14,25 +11,24 @@ public class DataOperations {
     public List<ModelStudent> getAllStudents() {
         List<ModelStudent> students = new ArrayList<>();
         try (Connection connection = DatabaseConnection.getConnection()) {
-            String query = "SELECT student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                           "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type FROM students";
+            String query = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, program, academicYear, entryLevel, scholarType FROM students";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 students.add(new ModelStudent(
-                    resultSet.getString("student_no"),
-                    resultSet.getString("first_name"),
-                    resultSet.getString("middle_name"),
-                    resultSet.getString("last_name"),
-                    resultSet.getString("mobile_number"),
+                    resultSet.getString("StudentNo"),
+                    resultSet.getString("firstName"),
+                    resultSet.getString("middleName"),
+                    resultSet.getString("lastName"),
+                    resultSet.getString("mobileNo"),
                     resultSet.getString("email"),
-                    resultSet.getString("date_of_birth"),
-                    resultSet.getString("place_of_birth"),
+                    resultSet.getString("dob"),
+                    resultSet.getString("placeOfBirth"),
                     resultSet.getString("program"),
-                    resultSet.getString("academic_year"),
-                    resultSet.getString("entry_level"),
-                    resultSet.getString("scholar_type")
+                    resultSet.getString("academicYear"),
+                    resultSet.getString("entryLevel"),
+                    resultSet.getString("scholarType")
                 ));
             }
         } catch (SQLException e) {
@@ -40,48 +36,38 @@ public class DataOperations {
         }
         return students;
     }
-    
-        // Fetch the 30 most recent students
+
+    // Fetch the 30 most recent students
     public List<ModelStudent> getRecentStudents() {
         List<ModelStudent> students = new ArrayList<>();
-        String sql = "SELECT * FROM students ORDER BY StudentNo LIMIT 30";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement", "root", "admin123");
-             Statement statement = connection.createStatement();
-             ResultSet rs = statement.executeQuery(sql)) {
+        try (Connection con = DatabaseConnection.getConnection()) {
+            String query = "SELECT StudentNo, firstName, middleName, lastName, program, entryLevel, email FROM students ORDER BY created_at DESC LIMIT 30";
+            PreparedStatement pst = con.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                // Fetch all fields as Strings
-                String studentNo = rs.getString("StudentNo"); // Student number is now VARCHAR
-                String firstName = rs.getString("firstName");
-                String middleName = rs.getString("middleName");
-                String lastName = rs.getString("lastName");
-                String mobileNumber = rs.getString("mobileNo");
-                String email = rs.getString("email");
-                String dateOfBirth = rs.getString("dob");
-                String placeOfBirth = rs.getString("placeOfBirth");
-                String program = rs.getString("program");
-                String academicYear = rs.getString("academicYear");
-                String entryLevel = rs.getString("entryLevel");
-                String scholarType = rs.getString("scholarType");
-
-                // Add to the list
-                students.add(new ModelStudent(
-                    studentNo, firstName, middleName, lastName, mobileNumber,
-                    email, dateOfBirth, placeOfBirth, program, academicYear, entryLevel, scholarType
-                ));
+            ModelStudent student = new ModelStudent();
+            student.setStudentNo(rs.getString("StudentNo"));
+            student.setFirstName(rs.getString("firstName"));
+            student.setMiddleName(rs.getString("middleName"));
+            student.setLastName(rs.getString("lastName"));
+            student.setProgram(rs.getString("program"));
+            student.setEntryLevel(rs.getString("entryLevel"));
+            student.setEmail(rs.getString("email"));
+            students.add(student);
             }
-        } catch (Exception e) {
-            System.err.println("Error fetching recent students: " + e.getMessage());
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return students;
     }
 
+
     // Add a new student
     public void addStudent(ModelStudent student) {
-        String sql = "INSERT INTO students (student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                     "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO students (StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, program, academicYear, entryLevel, scholarType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -101,13 +87,13 @@ public class DataOperations {
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error adding student: " + e.getMessage());
         }
     }
 
-    // Delete a student by studentNo
+    // Delete a student by StudentNo
     public void deleteStudent(String studentNo) {
-        String sql = "DELETE FROM students WHERE student_no = ?";
+        String sql = "DELETE FROM students WHERE StudentNo = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -115,14 +101,13 @@ public class DataOperations {
             pstmt.setString(1, studentNo);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error deleting student: " + e.getMessage());
         }
     }
 
     // Update student details
     public void updateStudent(ModelStudent student) {
-        String sql = "UPDATE students SET first_name = ?, middle_name = ?, last_name = ?, mobile_number = ?, email = ?, " +
-                     "date_of_birth = ?, place_of_birth = ?, program = ?, academic_year = ?, entry_level = ?, scholar_type = ?, WHERE student_no = ?";
+        String sql = "UPDATE students SET firstName = ?, middleName = ?, lastName = ?, mobileNo = ?, email = ?, dob = ?, placeOfBirth = ?, program = ?, academicYear = ?, entryLevel = ?, scholarType = ? WHERE StudentNo = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -137,39 +122,40 @@ public class DataOperations {
             pstmt.setString(8, student.getProgram());
             pstmt.setString(9, student.getAcademicYear());
             pstmt.setString(10, student.getEntryLevel());
-            pstmt.setString(11, student.getStudentNo());
-            pstmt.setString(12, student.getScholarType());
+            pstmt.setString(11, student.getScholarType());
+            pstmt.setString(12, student.getStudentNo());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error updating student: " + e.getMessage());
         }
     }
 
-    // Fetch a student by their student number
-    public ModelStudent getStudentByNumber(String studentNumber) {
+    // Fetch a student by their StudentNo
+    public ModelStudent getStudentByNumber(String studentNo) {
         ModelStudent student = null;
-        String query = "SELECT student_no, first_name, middle_name, last_name, mobile_number, email, " +
-                       "date_of_birth, place_of_birth, program, academic_year, entry_level, scholar_type " +
-                       "FROM students WHERE student_no = ?";
+        String query = "SELECT StudentNo, firstName, middleName, lastName, mobileNo, email, dob, placeOfBirth, program, academicYear, entryLevel, scholarType FROM students WHERE StudentNo = ?";
+
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, studentNumber);
+
+            statement.setString(1, studentNo);
             ResultSet resultSet = statement.executeQuery();
+
             if (resultSet.next()) {
                 student = new ModelStudent(
-                    resultSet.getString("student_no"),
-                    resultSet.getString("first_name"),
-                    resultSet.getString("middle_name"),
-                    resultSet.getString("last_name"),
-                    resultSet.getString("mobile_number"),
+                    resultSet.getString("StudentNo"),
+                    resultSet.getString("firstName"),
+                    resultSet.getString("middleName"),
+                    resultSet.getString("lastName"),
+                    resultSet.getString("mobileNo"),
                     resultSet.getString("email"),
-                    resultSet.getString("date_of_birth"),
-                    resultSet.getString("place_of_birth"),
+                    resultSet.getString("dob"),
+                    resultSet.getString("placeOfBirth"),
                     resultSet.getString("program"),
-                    resultSet.getString("academic_year"),
-                    resultSet.getString("entry_level"),
-                    resultSet.getString("scholar_type")
+                    resultSet.getString("academicYear"),
+                    resultSet.getString("entryLevel"),
+                    resultSet.getString("scholarType")
                 );
             }
         } catch (SQLException e) {

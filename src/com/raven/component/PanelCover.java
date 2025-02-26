@@ -1,4 +1,4 @@
- package com.raven.component;
+package com.raven.component;
 
 import com.raven.swing.ButtonOutLine;
 import java.awt.Color;
@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
 
@@ -19,6 +20,7 @@ public class PanelCover extends javax.swing.JPanel {
     private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
     private ActionListener event;
     private MigLayout layout;
+    private JLabel logo;
     private JLabel title;
     private JLabel description;
     private JLabel description1;
@@ -28,35 +30,48 @@ public class PanelCover extends javax.swing.JPanel {
     public PanelCover() {
         initComponents();
         setOpaque(false);
-        layout = new MigLayout("wrap, fill", "[center]", "push[]25[]10[]25[]push");
+        layout = new MigLayout("wrap, fill", "[center]", "push[]15[]10[]15[]push"); // Adjusted spacing
         setLayout(layout);
         init();
 
     }
-
     private void init() {
-        title = new JLabel("Welcome Back, Nationalian!");
-        title.setFont(new Font("sansserif", 1, 30));
-        title.setForeground(new Color(245, 245, 245));
-        add(title);
-        description = new JLabel("To keep connected with us please");
-        description.setForeground(new Color(245, 245, 245));
-        add(description);
-        description1 = new JLabel("login with your personal info");
-        description1.setForeground(new Color(245, 245, 245));
-        add(description1);
-        button = new ButtonOutLine();
-        button.setBackground(new Color(255, 255, 255));
-        button.setForeground(new Color(255, 255, 255));
-        button.setText("SIGN IN");
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                event.actionPerformed(ae);
-            }
-        });
-        add(button, "w 60%, h 40");
-    }
+       // Initialize the logo JLabel
+       logo = new JLabel();
+       logo.setIcon(new ImageIcon(getClass().getResource("/com/raven/icon/logonu.png"))); // Replace with your logo's path
+       logo.setHorizontalAlignment(JLabel.CENTER); // Center-align the logo
+
+       // Add the logo to the layout (adjust spacing)
+       add(logo, "w 50%, h 25%, gapbottom 5"); // Reduced width, height, and gap
+
+       // Modify the title to a two-line format using HTML
+       title = new JLabel("<html><center>NU FAIRVIEW<br>STUDENT MANAGEMENT SYSTEM</center></html>");
+       title.setFont(new Font("sansserif", Font.BOLD, 28)); // Adjust font size for better fit
+       title.setForeground(new Color(245, 245, 245));
+       add(title, "gapbottom 10"); // Adjust gap below the title
+
+       description = new JLabel("Enter your personal details");
+       description.setForeground(new Color(245, 245, 245));
+       add(description);
+
+       description1 = new JLabel("and start journey with us");
+       description1.setForeground(new Color(245, 245, 245));
+       add(description1);
+
+       button = new ButtonOutLine();
+       button.setBackground(new Color(255, 255, 255));
+       button.setForeground(new Color(255, 255, 255));
+       button.setText("SIGN UP");
+       button.addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent ae) {
+               if (event != null) {
+                   event.actionPerformed(ae);
+               }
+           }
+       });
+       add(button, "w 50%, h 40"); // Adjust button width and height
+   }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -76,10 +91,10 @@ public class PanelCover extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    @Override
+   @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
-        GradientPaint gra = new GradientPaint(0, 0, new Color(251,209,23), 0, getHeight(), new Color(50, 65, 140));
+        GradientPaint gra = new GradientPaint(0, 0, new Color(251, 209, 23), 0, getHeight(), new Color(50, 65, 140));
         g2.setPaint(gra);
         g2.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(grphcs);
@@ -124,12 +139,12 @@ public class PanelCover extends javax.swing.JPanel {
     public void login(boolean login) {
         if (this.isLogin != login) {
             if (login) {
-                title.setText("NUFV STUDENT SYSTEM");
+                title.setText("<html><center>NU FAIRVIEW<br>STUDENT MANAGEMENT SYSTEM</center></html>");
                 description.setText("Enter your personal details");
                 description1.setText("and start journey with us");
                 button.setText("SIGN UP");
             } else {
-                title.setText("Welcome, Nationalian!");
+                title.setText("Welcome Back, Nationalian!");
                 description.setText("To keep connected with us please");
                 description1.setText("login with your personal info");
                 button.setText("SIGN IN");

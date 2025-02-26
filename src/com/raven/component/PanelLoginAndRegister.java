@@ -23,59 +23,63 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
     }
 
     private void initRegister() {
-        register.setLayout(new MigLayout("wrap", "push[center]push", "push[]25[]10[]10[]25[]push"));
+        register.setLayout(new MigLayout("wrap, align center", "[center]", "push[]20[]20[]20[]40[]push"));
         JLabel label = new JLabel("Create Account");
-        label.setFont(new Font("sansserif", 1, 30));
+        label.setFont(new Font("sansserif", Font.BOLD, 25));
         label.setForeground(new Color(50, 65, 140));
-        register.add(label);
+        register.add(label, "gapbottom 10");
+
         MyTextField txtUser = new MyTextField();
         txtUser.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/user.png")));
         txtUser.setHint("Name");
-        register.add(txtUser, "w 60%");
+        register.add(txtUser, "w 50%, h 35!");
+
         MyTextField txtEmail = new MyTextField();
         txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/mail.png")));
         txtEmail.setHint("Email");
-        register.add(txtEmail, "w 60%");
+        register.add(txtEmail, "w 50%, h 35!");
+
         MyPasswordField txtPass = new MyPasswordField();
         txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/pass.png")));
         txtPass.setHint("Password");
-        register.add(txtPass, "w 60%");
+        register.add(txtPass, "w 50%, h 35!");
+
         Button cmd = new Button();
         cmd.setBackground(new Color(50, 65, 140));
         cmd.setForeground(new Color(250, 250, 250));
         cmd.setText("SIGN UP");
-        register.add(cmd, "w 40%, h 40");
+        register.add(cmd, "w 40%, h 40!, gaptop 15");
     }
 
     private void initLogin() {
-    login.setLayout(new MigLayout("wrap", "push[center]push", "push[]25[]10[]10[]25[]push"));
-    JLabel label = new JLabel("Sign In");
-    label.setFont(new Font("sansserif", 1, 30));
-    label.setForeground(new Color(50, 65, 140));
-    login.add(label);
+        login.setLayout(new MigLayout("wrap, align center", "[center]", "push[]20[]20[]20[]30[]push"));
+        JLabel label = new JLabel("Sign In");
+        label.setFont(new Font("sansserif", Font.BOLD, 25));
+        label.setForeground(new Color(50, 65, 140));
+        login.add(label, "gapbottom 10");
 
-    MyTextField txtEmail = new MyTextField();
-    txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/mail.png")));
-    txtEmail.setHint("Email");
-    login.add(txtEmail, "w 60%");
+        MyTextField txtEmail = new MyTextField();
+        txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/mail.png")));
+        txtEmail.setHint("Email");
+        login.add(txtEmail, "w 50%, h 35!");
 
-    MyPasswordField txtPass = new MyPasswordField();
-    txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/pass.png")));
-    txtPass.setHint("Password");
-    login.add(txtPass, "w 60%");
+        MyPasswordField txtPass = new MyPasswordField();
+        txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/pass.png")));
+        txtPass.setHint("Password");
+        login.add(txtPass, "w 50%, h 35!");
 
-    JButton cmdForget = new JButton("Forgot your password?");
-    cmdForget.setForeground(new Color(100, 100, 100));
-    cmdForget.setFont(new Font("sansserif", 1, 12));
-    cmdForget.setContentAreaFilled(false);
-    cmdForget.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    login.add(cmdForget);
+        JButton cmdForget = new JButton("Forgot your password?");
+        cmdForget.setForeground(new Color(100, 100, 100));
+        cmdForget.setFont(new Font("sansserif", Font.PLAIN, 12));
+        cmdForget.setContentAreaFilled(false);
+        cmdForget.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        login.add(cmdForget, "gapbottom 10");
 
-    Button cmd = new Button();
-    cmd.setBackground(new Color(50, 65, 140));
-    cmd.setForeground(new Color(250, 250, 250));
-    cmd.setText("SIGN IN");
-    login.add(cmd, "w 40%, h 40");
+        Button cmd = new Button();
+        cmd.setBackground(new Color(50, 65, 140));
+        cmd.setForeground(new Color(250, 250, 250));
+        cmd.setText("SIGN IN");
+        login.add(cmd, "w 40%, h 40!, gaptop 15");
 
     // Add action listener to the SIGN IN button
     cmd.addActionListener(e -> {
