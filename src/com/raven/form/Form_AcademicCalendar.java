@@ -1,16 +1,107 @@
 package com.raven.form;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Form_AcademicCalendar extends javax.swing.JPanel {
 
     public Form_AcademicCalendar() {
         initComponents();
+        initTable(); // Initialize the table with the new structure
+    }
+
+    private void initTable() {
+        DefaultTableModel model = new DefaultTableModel(
+            new Object[]{"Actions", "Category", "Title", "Note/Remarks", "Uploaded By", "Valid Until", "Require Agreement", "Last Update", "File Path"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                // Only allow the "Actions" column to be editable for button clicks
+                return column == 0;
+            }
+        };
+        CalendarTable.setModel(model);
+        CalendarTable.getColumnModel().getColumn(0).setCellRenderer(new ButtonRenderer());
+        CalendarTable.getColumnModel().getColumn(0).setCellEditor(new ButtonEditor(new JCheckBox()));
+        CalendarTable.removeColumn(CalendarTable.getColumnModel().getColumn(8)); // Hide the "File Path" column
+    }
+
+    // Renderer for the "Actions" column
+    class ButtonRenderer extends JPanel implements TableCellRenderer {
+        private final JButton viewButton = new JButton("View");
+        private final JButton deleteButton = new JButton("Delete");
+
+        public ButtonRenderer() {
+            setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+            add(viewButton);
+            add(deleteButton);
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            return this;
+        }
+    }
+
+    // Editor for the "Actions" column
+    class ButtonEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {
+        private final JPanel panel = new JPanel();
+        private final JButton viewButton = new JButton("View");
+        private final JButton deleteButton = new JButton("Delete");
+        private JTable table;
+        private int row;
+
+        public ButtonEditor(JCheckBox checkBox) {
+            panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+            panel.add(viewButton);
+            panel.add(deleteButton);
+
+            viewButton.addActionListener(this);
+            deleteButton.addActionListener(this);
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+            this.table = table;
+            this.row = row;
+            return panel;
+        }
+
+        @Override
+        public Object getCellEditorValue() {
+            return "";
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == viewButton) {
+                // View PDF logic
+                String filePath = table.getModel().getValueAt(row, 8).toString(); // Get the file path
+                File file = new File(filePath);
+                if (file.exists()) {
+                    try {
+                        Desktop.getDesktop().open(file);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Unable to open file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "File not found at path: " + filePath, "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (e.getSource() == deleteButton) {
+                // Delete row logic
+                int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this row?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    ((DefaultTableModel) table.getModel()).removeRow(row);
+                }
+            }
+            fireEditingStopped();
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -21,15 +112,7 @@ public class Form_AcademicCalendar extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         CalendarTable = new javax.swing.JTable();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
         Upload = new javax.swing.JButton();
-        Delete = new javax.swing.JButton();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -74,33 +157,6 @@ public class Form_AcademicCalendar extends javax.swing.JPanel {
             CalendarTable.getColumnModel().getColumn(4).setPreferredWidth(150);
         }
 
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField12.setText("Search Category");
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
-            }
-        });
-
-        jTextField13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField13.setText("Search Title");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
-            }
-        });
-
-        jTextField14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField14.setText("Search Note/Remarks");
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
-            }
-        });
-
         Upload.setBackground(new java.awt.Color(50, 65, 140));
         Upload.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Upload.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,52 +164,6 @@ public class Form_AcademicCalendar extends javax.swing.JPanel {
         Upload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UploadActionPerformed(evt);
-            }
-        });
-
-        Delete.setBackground(new java.awt.Color(255, 0, 0));
-        Delete.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Delete.setForeground(new java.awt.Color(255, 255, 255));
-        Delete.setText("Delete");
-        Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
-            }
-        });
-
-        jTextField19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField19.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField19.setText("Search Uploaded By");
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
-            }
-        });
-
-        jTextField20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField20.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField20.setText("Search Valid");
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
-            }
-        });
-
-        jTextField21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField21.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField21.setText("Search Require Agreement");
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
-            }
-        });
-
-        jTextField22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField22.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField22.setText("Search Last Update");
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
             }
         });
 
@@ -168,25 +178,7 @@ public class Form_AcademicCalendar extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(11, 11, 11))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Delete)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(Upload, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(Upload, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -195,89 +187,75 @@ public class Form_AcademicCalendar extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Upload)
-                    .addComponent(Delete))
+                .addComponent(Upload)
                 .addContainerGap(300, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
-
     private void UploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UploadActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileFilter(new FileNameExtensionFilter("Excel Files", "xls", "xlsx"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("PDF Files", "pdf"));
         int returnValue = fileChooser.showOpenDialog(this);
+
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-            JOptionPane.showMessageDialog(this, "File uploaded: " + selectedFile.getName(), "Success", JOptionPane.INFORMATION_MESSAGE);
-            // TODO: Add logic to parse and populate table with file content
+            String fileName = selectedFile.getName();
+            String filePath = selectedFile.getAbsolutePath();
+
+            // Create a form for user inputs
+            JTextField categoryField = new JTextField();
+            JTextField titleField = new JTextField();
+            JTextField noteRemarksField = new JTextField();
+            JTextField uploadedByField = new JTextField();
+            JTextField validUntilField = new JTextField();
+            JComboBox<String> requireAgreementField = new JComboBox<>(new String[]{"Yes", "No"});
+            JTextField lastUpdateField = new JTextField("Today"); // Default to "Today"
+
+            // Populate the form with input fields
+            Object[] message = {
+                "Category:", categoryField,
+                "Title:", titleField,
+                "Note/Remarks:", noteRemarksField,
+                "Uploaded By:", uploadedByField,
+                "Valid Until (e.g., 31-Dec-2025):", validUntilField,
+                "Require Agreement:", requireAgreementField,
+                "Last Update (e.g., Today):", lastUpdateField
+            };
+
+            int option = JOptionPane.showConfirmDialog(this, message, "Enter File Details", JOptionPane.OK_CANCEL_OPTION);
+            if (option == JOptionPane.OK_OPTION) {
+                String category = categoryField.getText();
+                String title = titleField.getText();
+                String noteRemarks = noteRemarksField.getText();
+                String uploadedBy = uploadedByField.getText();
+                String validUntil = validUntilField.getText();
+                String requireAgreement = (String) requireAgreementField.getSelectedItem();
+                String lastUpdate = lastUpdateField.getText();
+
+                // Validate inputs
+                if (category.isEmpty() || title.isEmpty() || uploadedBy.isEmpty() || validUntil.isEmpty() || lastUpdate.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Please fill in all mandatory fields!", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                // Add the file details to the table
+                DefaultTableModel model = (DefaultTableModel) CalendarTable.getModel();
+                model.addRow(new Object[]{"View/Delete", category, title, noteRemarks, uploadedBy, validUntil, requireAgreement, lastUpdate, filePath});
+
+                JOptionPane.showMessageDialog(this, "PDF uploaded: " + fileName, "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_UploadActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
-
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
-
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
-
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
-
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        int selectedRow = CalendarTable.getSelectedRow();
-        if (selectedRow != -1) {
-            DefaultTableModel model = (DefaultTableModel) CalendarTable.getModel();
-            model.removeRow(selectedRow);
-            JOptionPane.showMessageDialog(this, "Row deleted successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "Please select a row to delete", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_DeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CalendarTable;
-    private javax.swing.JButton Delete;
     private javax.swing.JButton Upload;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
     // End of variables declaration//GEN-END:variables
 }
