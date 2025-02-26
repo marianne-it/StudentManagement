@@ -226,12 +226,10 @@
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Component id="jSeparator3" min="-2" pref="11" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ResetButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="DeleteButton" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="DeleteButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="SaveButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ResetButton" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="115" max="32767" attributes="0"/>
           </Group>

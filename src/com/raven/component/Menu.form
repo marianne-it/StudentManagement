@@ -23,6 +23,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="sp" pref="240" max="32767" attributes="0"/>
           <Component id="profile1" alignment="0" pref="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Logout" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -30,7 +35,10 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="profile1" min="-2" pref="68" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="sp" min="-2" pref="738" max="-2" attributes="0"/>
+              <Component id="sp" min="-2" pref="659" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="Logout" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,6 +81,26 @@
       </SubComponents>
     </Container>
     <Component class="com.raven.component.Profile" name="profile1">
+    </Component>
+    <Component class="javax.swing.JButton" name="Logout">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="8c" green="41" red="32" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/raven/icon/12.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="    Logout"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

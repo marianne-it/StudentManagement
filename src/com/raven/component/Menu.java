@@ -10,20 +10,33 @@ import com.raven.swing.MenuItem;
 import com.raven.swing.scrollbar.ScrollBarCustom;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import net.miginfocom.swing.MigLayout;
 
 public class Menu extends javax.swing.JPanel {
+
+    private final MigLayout layout;
+    private EventMenuSelected event;
+    private EventShowPopupMenu eventShowPopup;
+    private boolean enableMenu = true;
+    private boolean showMenu = true;
+
+    public Menu() {
+        initComponents();
+        setOpaque(false);
+        sp.getViewport().setOpaque(false);
+        sp.setVerticalScrollBar(new ScrollBarCustom());
+        layout = new MigLayout("wrap, fillx, insets 0", "[fill]", "[]0[]");
+        panel.setLayout(layout);
+    }
+
 
     public boolean isShowMenu() {
         return showMenu;
@@ -43,58 +56,6 @@ public class Menu extends javax.swing.JPanel {
 
     public void addEventShowPopup(EventShowPopupMenu eventShowPopup) {
         this.eventShowPopup = eventShowPopup;
-    }
-
-    private final MigLayout layout;
-    private EventMenuSelected event;
-    private EventShowPopupMenu eventShowPopup;
-    private boolean enableMenu = true;
-    private boolean showMenu = true;
-
-    public Menu() {
-        initComponents();
-        setOpaque(false);
-        sp.getViewport().setOpaque(false);
-        sp.setVerticalScrollBar(new ScrollBarCustom());
-        layout = new MigLayout("wrap, fillx, insets 0", "[fill]", "[]0[]");
-        panel.setLayout(layout);
-
-        // Initialize the "Log Out" button
-        JButton btnLogOut = new JButton("Log Out");
-        btnLogOut.setBackground(new Color(255, 255, 255));
-        btnLogOut.setForeground(new Color(50, 65, 140));
-        btnLogOut.setFont(new Font("Arial", Font.BOLD, 14));
-        btnLogOut.setFocusPainted(false);
-        btnLogOut.setBorderPainted(false);
-        btnLogOut.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
-        // Add an action listener to handle the log out action
-        btnLogOut.addActionListener(e -> {
-            // Get the current top-level frame (parent window)
-            JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-
-            // Show a confirmation dialog centered on the top frame
-            int response = JOptionPane.showConfirmDialog(
-                topFrame,
-                "Are you sure you want to log out?",
-                "Confirm Log Out",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-            );
-
-        // If the user confirms, redirect to the login screen
-        if (response == JOptionPane.YES_OPTION) {
-            // Redirect to the login screen
-            Main loginPage = new Main(); // Replace with your login page class
-            loginPage.setVisible(true);
-
-            // Close the current window
-            topFrame.dispose();
-        }
-    });
-
-        // Add the button to the panel
-        panel.add(btnLogOut, "gap top 50, h 40!, dock south");
     }
 
     public void initMenuItem() {
@@ -145,6 +106,7 @@ public class Menu extends javax.swing.JPanel {
         sp = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
         profile1 = new com.raven.component.Profile();
+        Logout = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(50, 65, 140));
 
@@ -168,23 +130,65 @@ public class Menu extends javax.swing.JPanel {
 
         sp.setViewportView(panel);
 
+        Logout.setBackground(new java.awt.Color(50, 65, 140));
+        Logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Logout.setForeground(new java.awt.Color(255, 255, 255));
+        Logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/12.png"))); // NOI18N
+        Logout.setText("    Logout");
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
             .addComponent(profile1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Logout)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(profile1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Logout)
+                .addGap(58, 58, 58))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
+         // Get the current top-level frame (parent window)
+        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+
+        // Show a confirmation dialog centered on the top frame
+        int response = JOptionPane.showConfirmDialog(
+            topFrame,
+            "Are you sure you want to log out?",
+            "Confirm Log Out",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        // If the user confirms, redirect to the login screen
+        if (response == JOptionPane.YES_OPTION) {
+            // Redirect to the login screen
+            Main loginPage = new Main(); // Replace with your login page class
+            loginPage.setVisible(true);
+
+            // Close the current window
+            topFrame.dispose();
+        }
+    }//GEN-LAST:event_LogoutActionPerformed
   
-   @Override
+    @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -195,6 +199,7 @@ public class Menu extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Logout;
     private javax.swing.JPanel panel;
     private com.raven.component.Profile profile1;
     private javax.swing.JScrollPane sp;
